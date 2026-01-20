@@ -1,6 +1,7 @@
 {
   "name": "ethmarks-posts",
   "version": "1.0.0",
+  "private": true,
   "description": "The posts of ethmarks's personal website",
   "type": "module",
   "repository": {
