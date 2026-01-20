@@ -4,6 +4,10 @@
   "private": true,
   "description": "The posts of ethmarks's personal website",
   "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ethmarks/posts.git"
