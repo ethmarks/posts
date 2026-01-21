@@ -7,6 +7,8 @@ stylesheets: ["/assets/post-single.css"]
   <h1 class="animated title">{{ title }}</h1>
   <div class="info animated">
     {{- set displayTime = created || published }}
+    {{- set wordCount = content.replace(/<[^>]*>/g, "").split(/\s+/).length }}
+    {{- set readTime = Math.ceil(wordCount / 200) }}
 
     {{- if displayTime }}
       {{- set plainDate = displayTime |> toPlainDate }}
@@ -23,6 +25,10 @@ stylesheets: ["/assets/post-single.css"]
         </span>
       {{- /if }}
     {{- /if }}
+
+    {{- if (displayTime && readTime > 1) }}<span class="separator"> · </span>{{ /if }}
+
+    {{- if readTime > 1 }}<span class="read-time">{{ readTime }} min read</span>{{ /if }}
   </div>
 </div>
 
