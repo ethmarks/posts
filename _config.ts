@@ -15,6 +15,15 @@ const site = lume({
 
 site.ignore("README.md");
 
+// Strip 'content/' from output URLs
+site.preprocess([".md", ".vto"], (pages) => {
+  for (const page of pages) {
+    if (page.data.url?.startsWith("/content/")) {
+      page.data.url = page.data.url.replace("/content/", "/");
+    }
+  }
+});
+
 // site.use(date());
 // site.use(code_highlight());
 // site.use(lume_cms());
