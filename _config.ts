@@ -12,12 +12,12 @@ import base_path from "lume/plugins/base_path.ts";
 // import feed from "lume/plugins/feed.ts";
 // import sitemap from "lume/plugins/sitemap.ts";
 
-const url = ("https://" + Deno.env.get("VERCEL_URL")) || "http://localhost"
+const url = ("https://" + Deno.env.get("VERCEL_URL")) || "http://localhost";
 const basePath = Deno.env.get("BASE_PATH") || ""; // "/posts"
 
 const site = lume({
   dest: "./dist" + basePath,
-  location: new URL(url + basePath + "/")
+  location: new URL(url + basePath + "/"),
 });
 
 site.ignore("README.md");
@@ -53,12 +53,12 @@ site.use(readingInfo({
   wordsPerMinute: 200,
 }));
 site.use(lightningcss());
+site.use(base_path());
 site.use(inline());
 // site.use(date());
 // site.use(code_highlight());
 // site.use(lume_cms());
 // site.use(esbuild());
-site.use(base_path());
 // site.use(metas());
 // site.use(feed());
 // site.use(sitemap());
