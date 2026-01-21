@@ -34,10 +34,14 @@
         ></script>
     </head>
     <body>
-        <eth-header active="posts"></eth-header>
+        <eth-header active="posts">
+            {{ remote.header |> safe }}
+        </eth-header>
 
         <main>{{ content }}</main>
 
-        <eth-footer source="https://github.com/ethmarks/posts"></eth-footer>
+        <eth-footer source="https://github.com/ethmarks/posts">
+            {{ remote.footer |> safe }}
+        </eth-footer>
     </body>
 </html>
