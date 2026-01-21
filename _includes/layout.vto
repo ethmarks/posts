@@ -20,8 +20,12 @@
             href="https://site-ethmarks.vercel.app/common/ethmarks-rich.css"
         />
 
-        {{ for stylesheet of stylesheets }}
-            <link rel="stylesheet" href="{{ stylesheet }}" />
+        {{ for stylesheetURL of stylesheets }}
+            <link rel="stylesheet" href="{{ stylesheetURL }}" />
+        {{ /for }}
+
+        {{ for scriptURL of scripts }}
+            <script src="{{ scriptURL }}" defer ></script>
         {{ /for }}
 
         <script

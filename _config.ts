@@ -20,6 +20,7 @@ site.ignore("README.md");
 
 site.add("assets/post-index.css");
 site.add("assets/post-single.css");
+site.add("assets/randompost.js");
 
 // Strip 'content/' from output URLs
 site.preprocess([".md", ".vto"], (pages) => {
