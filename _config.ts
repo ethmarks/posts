@@ -15,6 +15,8 @@ const site = lume({
 
 site.ignore("README.md");
 
+site.add("assets/post-index.css");
+
 // Strip 'content/' from output URLs
 site.preprocess([".md", ".vto"], (pages) => {
   for (const page of pages) {
