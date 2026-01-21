@@ -18,4 +18,13 @@ stylesheets: ["/assets/post-index.css"]
             🎲 Random Post
         </a>
     </div>
+
+    <nav class="post-links">
+        {{ for post of search.pages("layout=post.vto !unlisted=true", "published=desc") }}
+            <a class="post-link" href="{{ post.url }}">
+                <h3>{{ post.title }}</h3>
+                {{ await comp.postInfo({ created: post.created, published: post.published, readingInfo: post.readingInfo }) }}
+            </a>
+        {{ /for }}
+    </nav>
 </article>
