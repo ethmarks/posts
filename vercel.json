@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo 'Skipping default install...'",
+  "buildCommand": "curl -fsSL https://deno.land/install.sh | sh && /vercel/.deno/bin/deno task build",
+  "outputDirectory": "dist",
   "redirects": [
     {
       "source": "/",

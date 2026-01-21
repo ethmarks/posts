@@ -19,7 +19,14 @@
             rel="stylesheet"
             href="https://site-ethmarks.vercel.app/common/ethmarks-rich.css"
         />
-        <link rel="stylesheet" href="{{ stylesheet }}" />
+
+        {{ for stylesheetURL of stylesheets }}
+            <link rel="stylesheet" href="{{ stylesheetURL }}" />
+        {{ /for }}
+
+        {{ for scriptURL of scripts }}
+            <script src="{{ scriptURL }}" defer ></script>
+        {{ /for }}
 
         <script
             src="https://site-ethmarks.vercel.app/common/ethmarks.wc.js"
@@ -29,7 +36,7 @@
     <body>
         <eth-header active="posts"></eth-header>
 
-        <main>{{ content | safe }}</main>
+        <main>{{ content }}</main>
 
         <eth-footer source="https://github.com/ethmarks/posts"></eth-footer>
     </body>

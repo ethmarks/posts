@@ -1,0 +1,24 @@
+{{- set displayTime = created || published }}
+{{- set readTime = readingInfo?.minutes || 0 }}
+
+<div class="info animated">
+    {{- if displayTime }}
+    {{- set plainDate = displayTime |> toPlainDate }}
+    <time datetime="{{ plainDate.toString() }}">
+        {{ plainDate.toLocaleString("en-US", { year: "numeric", month: "long", day: "numeric" }) }}
+    </time>
+    {{- if created && published }}
+        {{- set publishedPlain = published |> toPlainDate }}
+        <span
+        class="published-note"
+        title="Published {{ publishedPlain.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}"
+        >
+        (published later)
+        </span>
+    {{- /if }}
+    {{- /if }}
+
+    {{- if (displayTime && readTime > 1) }}<span class="separator"> · </span>{{ /if }}
+
+    {{- if readTime > 1 }}<span class="read-time">{{ readTime }} min read</span>{{ /if }}
+</div>
