@@ -9,7 +9,9 @@ import lume from "lume/mod.ts";
 // import feed from "lume/plugins/feed.ts";
 // import sitemap from "lume/plugins/sitemap.ts";
 
-const site = lume();
+const site = lume({
+  dest: "./dist",
+});
 
 site.ignore("README.md");
 
