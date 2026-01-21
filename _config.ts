@@ -11,6 +11,8 @@ import lume from "lume/mod.ts";
 
 const site = lume();
 
+site.ignore("README.md");
+
 // site.use(date());
 // site.use(code_highlight());
 // site.use(lume_cms());
