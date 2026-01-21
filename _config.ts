@@ -7,13 +7,17 @@ import readingInfo from "lume/plugins/reading_info.ts";
 // import lume_cms from "lume/plugins/lume_cms.ts";
 // import esbuild from "lume/plugins/esbuild.ts";
 import lightningcss from "lume/plugins/lightningcss.ts";
-// import base_path from "lume/plugins/base_path.ts";
+import base_path from "lume/plugins/base_path.ts";
 // import metas from "lume/plugins/metas.ts";
 // import feed from "lume/plugins/feed.ts";
 // import sitemap from "lume/plugins/sitemap.ts";
 
+const url = ("https://" + Deno.env.get("VERCEL_URL")) || "http://localhost"
+const basePath = Deno.env.get("BASE_PATH") || ""; // "/posts"
+
 const site = lume({
-  dest: "./dist",
+  dest: "./dist" + basePath,
+  location: new URL(url + basePath + "/")
 });
 
 site.ignore("README.md");
@@ -54,7 +58,7 @@ site.use(inline());
 // site.use(code_highlight());
 // site.use(lume_cms());
 // site.use(esbuild());
-// site.use(base_path());
+site.use(base_path());
 // site.use(metas());
 // site.use(feed());
 // site.use(sitemap());
