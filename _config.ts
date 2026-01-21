@@ -1,4 +1,5 @@
 import lume from "lume/mod.ts";
+import markdown from "lume/plugins/markdown.ts";
 // import date from "lume/plugins/date.ts";
 // import code_highlight from "lume/plugins/code_highlight.ts";
 // import lume_cms from "lume/plugins/lume_cms.ts";
@@ -36,6 +37,11 @@ function toPlainDate(value: Date | string): Temporal.PlainDate {
 }
 site.filter("toPlainDate", toPlainDate);
 
+site.use(markdown({
+  options: {
+    "typographer": true,
+  },
+}));
 // site.use(date());
 // site.use(code_highlight());
 // site.use(lume_cms());
