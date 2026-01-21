@@ -30,6 +30,25 @@ stylesheets: ["/assets/post-single.css"]
 
     {{- if readTime > 1 }}<span class="read-time">{{ readTime }} min read</span>{{ /if }}
   </div>
+  {{ set externalLinks = [
+    { url: codepen, icon: "codepen", label: "CodePen", animated: true },
+    { url: colab, icon: "colab", label: "Colab Notebook", animated: true },
+    { url: github, icon: "github", label: "GitHub Repo", animated: true },
+    { url: link, icon: "link", label: "Link", animated: false },
+    { url: webpage, icon: "webpage", label: "Webpage", animated: true },
+    { url: wikipedia, icon: "wikipedia", label: "Wikipedia Article", animated: true },
+  ].filter(item => item.url) }}
+
+  {{- if externalLinks.length }}
+  <div class="external-link-row">
+    {{- for item of externalLinks }}
+    <a class="external-link{{ item.animated ? " animated" : "" }}" href="{{ item.url }}">
+      <img src="/assets/icons/{{ item.icon }}.svg" alt="{{ item.label }} icon" inline />
+      <span>{{ item.label }}</span>
+    </a>
+    {{- /for }}
+  </div>
+  {{- /if }}
 </div>
 
 <article>

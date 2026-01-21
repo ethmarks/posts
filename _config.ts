@@ -1,5 +1,6 @@
 import lume from "lume/mod.ts";
 import markdown from "lume/plugins/markdown.ts";
+import inline from "lume/plugins/inline.ts";
 // import date from "lume/plugins/date.ts";
 // import code_highlight from "lume/plugins/code_highlight.ts";
 // import lume_cms from "lume/plugins/lume_cms.ts";
@@ -42,11 +43,12 @@ site.use(markdown({
     "typographer": true,
   },
 }));
+site.use(lightningcss());
+site.use(inline());
 // site.use(date());
 // site.use(code_highlight());
 // site.use(lume_cms());
 // site.use(esbuild());
-site.use(lightningcss());
 // site.use(base_path());
 // site.use(metas());
 // site.use(feed());
