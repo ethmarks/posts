@@ -27,6 +27,15 @@ site.preprocess([".md", ".vto"], (pages) => {
   }
 });
 
+/** Convert a Date or string to a Temporal.PlainDate */
+function toPlainDate(value: Date | string): Temporal.PlainDate {
+  if (value instanceof Date) {
+    return Temporal.PlainDate.from(value.toISOString().split("T")[0]);
+  }
+  return Temporal.PlainDate.from(value.toString());
+}
+site.filter("toPlainDate", toPlainDate);
+
 // site.use(date());
 // site.use(code_highlight());
 // site.use(lume_cms());

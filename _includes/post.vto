@@ -3,7 +3,29 @@ layout: layout.vto
 stylesheets: ["/assets/post-single.css"]
 ---
 
-<h1>{{ title }}</h1>
+<div class="frontmatter">
+  <h1 class="animated title">{{ title }}</h1>
+  <div class="info animated">
+    {{- set displayTime = created || published }}
+
+    {{- if displayTime }}
+      {{- set plainDate = displayTime |> toPlainDate }}
+      <time datetime="{{ plainDate.toString() }}">
+        {{ plainDate.toLocaleString("en-US", { year: "numeric", month: "long", day: "numeric" }) }}
+      </time>
+      {{- if created && published }}
+        {{- set publishedPlain = published |> toPlainDate }}
+        <span
+          class="published-note"
+          title="Published {{ publishedPlain.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}"
+        >
+          (published later)
+        </span>
+      {{- /if }}
+    {{- /if }}
+  </div>
+</div>
+
 <article>
-    {{ content }}
+  {{ content }}
 </article>
