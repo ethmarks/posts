@@ -9,6 +9,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyVitePlugin);
 
   eleventyConfig.ignores.add("README.md");
+
+  eleventyConfig.addPassthroughCopy("post-index.css");
 }
 
 export const config = {

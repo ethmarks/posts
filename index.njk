@@ -4,4 +4,20 @@ title: Posts
 description: Ethan Marks' posts
 ---
 
+{% block head %}
+<link rel="stylesheet" href="/post-index.css" />
+{% endblock %}
+
 <h1>{{ title}}</h1>
+<article>
+    <div id="random-post-container">
+        <a
+            href="#"
+            id="random-post-btn"
+            class="animated"
+            title="Go to a random post"
+        >
+            🎲 Random Post
+        </a>
+    </div>
+</article>
