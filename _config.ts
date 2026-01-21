@@ -1,6 +1,7 @@
 import lume from "lume/mod.ts";
 import markdown from "lume/plugins/markdown.ts";
 import inline from "lume/plugins/inline.ts";
+import readingInfo from "lume/plugins/reading_info.ts";
 // import date from "lume/plugins/date.ts";
 // import code_highlight from "lume/plugins/code_highlight.ts";
 // import lume_cms from "lume/plugins/lume_cms.ts";
@@ -42,6 +43,9 @@ site.use(markdown({
   options: {
     "typographer": true,
   },
+}));
+site.use(readingInfo({
+  wordsPerMinute: 200,
 }));
 site.use(lightningcss());
 site.use(inline());
