@@ -19,7 +19,10 @@
             rel="stylesheet"
             href="https://site-ethmarks.vercel.app/common/ethmarks-rich.css"
         />
-        <link rel="stylesheet" href="{{ stylesheet }}" />
+
+        {{ for stylesheet of stylesheets }}
+            <link rel="stylesheet" href="{{ stylesheet }}" />
+        {{ /for }}
 
         <script
             src="https://site-ethmarks.vercel.app/common/ethmarks.wc.js"
