@@ -19,6 +19,7 @@ const site = lume({
 
 site.ignore("README.md");
 
+site.add("media");
 site.add("assets/post-index.css");
 site.add("assets/post-single.css");
 site.add("assets/randompost.js");
