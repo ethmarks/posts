@@ -41,6 +41,10 @@
     "serve": {
       "description": "Run and serve the site for development",
       "command": "deno task lume -s"
+    },
+    "cms": {
+      "description": "Run standalone CMS server (for testing Deno Deploy setup)",
+      "command": "deno run --env --allow-env --allow-net serve.ts"
     }
   },
   "compilerOptions": {
