@@ -7,7 +7,7 @@ description: >-
 ---
 You probably know that a fortnight is equal to 14 days.
 
-However, you probably didn't know that there are a _bunch_ more units like that. Here's a list of a few of my favorites:
+However, you probably didn't know that there are a _bunch_ more units like that. Here's a list of a few of my favorites.
 
 | Unit       | Value                | Usage/Source/Trivia                                                                      |
 | ---------- | -------------------- | ---------------------------------------------------------------------------------------- |
