@@ -4,7 +4,7 @@ import inline from "lume/plugins/inline.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
 import lightningcss from "lume/plugins/lightningcss.ts";
 import base_path from "lume/plugins/base_path.ts";
-import { imageRule } from "./render_image.ts";
+import { imageRule } from "./render_image.js";
 // import code_highlight from "lume/plugins/code_highlight.ts";
 // import metas from "lume/plugins/metas.ts";
 // import feed from "lume/plugins/feed.ts";

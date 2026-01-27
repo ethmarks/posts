@@ -1,4 +1,3 @@
-// deno-lint-ignore-file no-explicit-any
 /**
  * Custom markdown-it rendering rule for images that supports:
  * - Video files (webm, mp4, ogg, mov)
@@ -7,15 +6,15 @@
  * - Figure with optional caption
  */
 export function imageRule(
-  tokens: any,
-  idx: any,
-  _options: any,
-  _env: any,
-  _self: any,
+  tokens,
+  idx,
+  _options,
+  _env,
+  _self,
 ) {
   const token = tokens[idx];
   const srcIndex = token.attrIndex("src");
-  const src = token.attrs![srcIndex][1];
+  const src = token.attrs[srcIndex][1];
   const alt = token.content;
   const title = token.attrGet("title") || "";
 
