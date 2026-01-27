@@ -1,3 +1,7 @@
+:root {
+    --max-media-height: 600px;
+}
+
 .frontmatter {
     display: flex;
     flex-direction: column;
