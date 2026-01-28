@@ -57,7 +57,7 @@ To demonstrate, I made this image of two routes between [Stonehenge (Salisbury, 
 
 Intuitively, the orange route looks to be the shortest. On a rectangle, straight lines are always the shortest, and the map is a rectangle. Ipso facto, the straight line route is the shortest. And yet, if you were to actually travel these routes, you'd find that the although the orange route is 5322.57 miles, the blue route is only 4961.73 miles ([source](https://gist.github.com/ethmarks/30213b699ea5d90eb25a806d78fcf1c1)). Even though the blue route appears curved and indirect on the map, it's significantly shorter.
 
-This is because the blue route is an example of a [great circle route](https://en.wikipedia.org/wiki/Great-circle_navigation): by definition the shortest possible routes between two points on a sphere. Because the Earth is a sphere, the blue route is the shortest possible route. It only looks curved and inefficient as a result of Mercator distortion.
+This is because the blue route is an example of a [great circle route](https://en.wikipedia.org/wiki/Great-circle_navigation): by definition the shortest possible route between two points on a sphere. Because the Earth is a sphere, the blue route is the shortest possible route. It only looks curved and inefficient as a result of Mercator distortion.
 
 Rectangular maps lull people into a false sense of understanding. People understand how rectangles work, so they assume that rectangular maps work the same way, even though they don't. The Waterman solves this problem by being a butterfly. Most people don't have an intuitive understanding of the geometry of butterflies, so people are mistrustful of its geometry and less likely to make false assumptions.
 
@@ -67,7 +67,7 @@ Rectangular maps lull people into a false sense of understanding. People underst
 
 The Waterman is an objectively beautiful map.
 
-Of course, beauty is subjective, but it isn't _that_ subjective. Humans almost universally appreciate symmetry, and the Waterman not only has perfect vertical symmetry, but it's composed of four symmetric pairs of equilateral triangles; triangles which themselves have horizontal, vertical, and rotational symmetry. The Waterman has 4 five-pointed stars in the negative space of each vertex of the central rhombus (which has geometrically-pleasing proportions of `1:√3`), one of which forms leading lines towards the North pole. There's _tons_ of geometric elegance in the Waterman that makes it visually striking and pleasing to look at.
+Of course, beauty is subjective, but it isn't _that_ subjective. Humans almost universally appreciate symmetry, and the Waterman not only has perfect vertical symmetry, but it's composed of four symmetric pairs of equilateral triangles; triangles which themselves have horizontal, vertical, and rotational symmetry. The Waterman has 4 stars in the negative space of each vertex of the central rhombus (which has geometrically-pleasing proportions of `1:√3`), one of which forms leading lines towards the North pole. There's _tons_ of geometric elegance in the Waterman that makes it visually striking and pleasing to look at.
 
 Beyond geometry, there's also symbolism. The Waterman is in the shape of a butterfly: a symbol of wildness and nature and exploration. Rather than conforming to a standardized rectangle or circle, the Waterman's form is unique and striking, which is befitting of a depiction of the one and only Earth.
 
@@ -99,8 +99,6 @@ The Waterman has much more "teleportation" than most other maps, which can be co
 
 On most common maps like the Mercator or the Robinson, North is always up. All 'up' things are 'north', and vice versa. The two directions are equivalent.
 
-![A scene from It's Always Sunny in Philadelpha where Charlie says 'I thought north was like, up' and Frank responds 'Up?'](/media/IASIP_north_up.webp)
-
 But on the Waterman, 'north' no longer always means 'up'. Instead, north varies by location. In North America, north is to the upper right, but in Europe, north is to the upper left. In Australia, north is to the left and slightly _down_. Iceland is the _only_ landmass on the Waterman where north is directly upwards.
 
 This can be disorienting and takes quite a bit of getting used to. It also makes it much more difficult to describe locations in relation to the cardinal directions.
@@ -123,7 +121,7 @@ Next, project each point from a sphere (the Earth, in this case) onto the closes
 
 I love the Waterman butterfly. I think that it is genuinely one of the best map projections, and I wish it was used more.
 
-Over the last few years, several of the websites that used to host ultra-resolution images of Waterman maps have shut down. I discovered this to my dismay while I was researching this post. Thankfully, I had the accidental foresight to save a few Waterman maps to my hard drive a couple years ago.
+One major obstacle to the Waterman being more widely used is that it's difficult to find print-quality images. Over the last few years, several of the websites that used to host ultra-resolution images of Waterman maps have shut down. Thankfully, I had the accidental foresight to save a couple Waterman maps to my hard drive a few years ago.
 
 Unfortunately, because the images are so heavy (one weighs 117.8 megabytes, which is heavier than all other assets on my site put together), I can't host them on this site. So if you want them, feel free to [get in touch](mailto:ethmarks.dev@gmail.com) and I'll send them to you!
 
