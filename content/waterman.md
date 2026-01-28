@@ -1,6 +1,6 @@
 ---
 title: The Waterman Butterfly
-published: 2025-04-25
+published: 2026-01-28
 description: An exploration of the Waterman Butterfly map projection, its advantages, disadvantages, and visual appeal.
 wikipedia: https://en.wikipedia.org/wiki/Waterman_butterfly_projection
 ---
