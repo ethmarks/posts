@@ -1,7 +1,8 @@
 ---
 title: Collective Nouns
 published: 2025-04-23
-description: A collection of amusing and obscure collective nouns for animals.
+desc: A collection of amusing and obscure collective nouns for animals.
+img: /media/business_of_ferrets.webp
 wikipedia: https://en.wikipedia.org/wiki/Collective_noun
 ---
 

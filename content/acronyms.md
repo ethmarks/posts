@@ -1,7 +1,7 @@
 ---
 title: Acronyms
 published: 2025-06-09
-description: A list of false etymology acronyms I came up with
+desc: A list of false etymology acronyms I came up with
 ---
 
 Science fun fact: the word "laser" is actually an acronym. When the first prototype lasers were built in the early 1960s, the process was called "light amplification by stimulated emission of radiation". Understandably, people didn't really want to pronounce that mouthful, so the term was acronymized to "LASER". When lasers became commodities, the capitalization was dropped and "laser" became a common noun.

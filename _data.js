@@ -12,5 +12,5 @@ export const remote = {
 
 export const canonUrl = "https://site-ethmarks.vercel.app/posts";
 export const title = "Posts";
-export const description = "Ethan Marks' posts";
+export const desc = "Ethan Marks' posts";
 export const img = "/media/ethmarks_posts.webp";

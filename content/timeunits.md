@@ -1,7 +1,7 @@
 ---
 title: Units of Time
 published: 2025-05-09
-description: A fun list of obscure and historical units of time, from the jiffy to the lustrum.
+desc: A fun list of obscure and historical units of time, from the jiffy to the lustrum.
 ---
 
 You probably know that a fortnight is equal to 14 days.

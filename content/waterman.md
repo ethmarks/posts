@@ -1,7 +1,8 @@
 ---
 title: The Waterman Butterfly
 published: 2026-01-28
-description: An exploration of the Waterman Butterfly map projection, its advantages, disadvantages, and visual appeal.
+desc: An exploration of the Waterman Butterfly map projection, its advantages, disadvantages, and visual appeal.
+img: /media/waterman.webp
 wikipedia: https://en.wikipedia.org/wiki/Waterman_butterfly_projection
 ---
 
