@@ -1,3 +1,5 @@
+import { getImageInfo } from "jsr:@retraigo/image-size";
+
 /**
  * Custom markdown-it rendering rule for images that supports:
  * - Video files (webm, mp4, ogg, mov)
@@ -32,6 +34,16 @@ export function imageRule(
   const caption = title;
   const displayTitle = caption || altProcessed;
 
+  // Get image dimensions
+  const isImgSizeProcessable = /\.(jpeg|png|gif|bmp|webp)$/i.test(src);
+  let width, height;
+  if (isImgSizeProcessable) {
+    const imgData = Deno.readFileSync(src.replace(/^\//, ""));
+    const info = getImageInfo(imgData);
+    width = info.width;
+    height = info.height;
+  }
+
   // Compute all HTML attributes
   const tag = isVideo ? "video" : "img";
   const typeClass = isVideo ? (isGif ? "gif" : "video") : "";
@@ -39,6 +51,9 @@ export function imageRule(
   const className = `responsive${
     typeClass ? ` ${typeClass}` : ""
   }${verticalClass}`;
+  const dimAttrs = isImgSizeProcessable
+    ? `width="${width}" height="${height}"`
+    : "";
   const labelAttr = isVideo ? "aria-label" : "alt";
   const titleAttr = displayTitle ? ` title="${displayTitle}"` : "";
   const videoAttrs = isVideo
@@ -50,6 +65,7 @@ export function imageRule(
             <${tag}
               class="${className}"
               src="${src}"
+              ${dimAttrs}
               ${labelAttr}="${altProcessed}"
               ${titleAttr}
               ${videoAttrs}>
