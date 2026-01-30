@@ -10,5 +10,6 @@ export const remote = {
   footer: footerHTML,
 };
 
+export const canonUrl = "https://site-ethmarks.vercel.app/posts";
 export const title = "Posts";
 export const description = "Ethan Marks' posts";
