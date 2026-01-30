@@ -9,3 +9,6 @@ export const remote = {
   header: headerHTML,
   footer: footerHTML,
 };
+
+export const title = "Posts";
+export const description = "Ethan Marks' posts";
