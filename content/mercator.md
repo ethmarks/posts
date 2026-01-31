@@ -4,7 +4,7 @@ published: 2025-10-15
 desc: Mercator's 1569 World Map was useless for navigation because of its numerous errors
 ---
 
-*Note: this was written as a project for my English class.*
+*Note: I wrote this for an English class assignment as a genre translation of [this research article](https://doi.org/10.1017/S0373463316000291) by Joaquim Gaspar*
 
 ## Introduction
 
@@ -170,7 +170,3 @@ Mercator was a visionary mathematician who sucked at implementing his ideas in p
 His map was not useful for navigation.
 
 ~Ethan
-
-## Sources
-
-- [*Revisiting the Mercator World Map of 1569: an Assessment of Navigational Accuracy*](https://doi.org/10.1017/S0373463316000291) by Joaquim Gaspar.
