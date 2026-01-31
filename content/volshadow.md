@@ -6,7 +6,7 @@ desc: A neat photo I took that demonstrates the air quality of Toronto via the v
 
 ![TALL A photo of the CN Tower in Toronto, taken in early morning, where the tower casts a visible volumetric shadow in the air itself](/media/cn_tower_shadow.webp)
 
-Early in the morning, from certain viewpoints, the [CN Tower](https://en.wikipedia.org/wiki/CN_Tower) in [Toronto](https://en.wikipedia.org/wiki/Toronto) casts a volumetric shadow in the air.
+Early in the morning, from certain viewpoints, the [CN Tower](https://en.wikipedia.org/wiki/CN_Tower) in Toronto casts a volumetric shadow in the air.
 
 The photo above was taken by me on May 24, 2024, at 9:26 AM, standing in [this location](https://www.google.com/maps/@43.6426428,-79.3886813,3a,75y,83.39h,138.19t/data=!3m7!1e1!3m5!1sph7lCFoRuI5pXxmbBQBUrg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-48.188331630086395%26panoid%3Dph7lCFoRuI5pXxmbBQBUrg%26yaw%3D83.3943161395596!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D), just to the north of the [Rogers Center](https://en.wikipedia.org/wiki/Rogers_Centre). It is one of my favorite photos.
 
