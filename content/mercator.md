@@ -2,6 +2,7 @@
 title: Mercator's World Map was useless
 published: 2025-10-15
 desc: Mercator's 1569 World Map was useless for navigation because of its numerous errors
+img: /media/mercator.webp
 ---
 
 *Note: I wrote this for an English class assignment as a genre translation of [this research article](https://doi.org/10.1017/S0373463316000291) by Joaquim Gaspar*

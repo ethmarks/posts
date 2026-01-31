@@ -2,6 +2,7 @@
 title: Volumetric Shadows in Toronto
 published: 2025-07-17
 desc: A neat photo I took that demonstrates the air quality of Toronto via the volumetric shadow cast by the CN Tower
+img: /media/volshadow.webp
 ---
 
 ![TALL A photo of the CN Tower in Toronto, taken in early morning, where the tower casts a visible volumetric shadow in the air itself](/media/cn_tower_shadow.webp)
