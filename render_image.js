@@ -26,9 +26,13 @@ export function imageRule(
   // Check for special markers in alt text
   const isGif = /GIF/.test(alt);
   const isTall = /TALL/.test(alt);
+  const isIframe = /IFRAME/.test(alt);
 
   // Process alt text by removing markers
-  const altProcessed = alt.replace(/GIF/g, "").replace(/TALL/g, "").trim();
+  const altProcessed = alt.replace(/GIF/g, "").replace(/TALL/g, "").replace(
+    /IFRAME/g,
+    "",
+  ).trim();
 
   // Determine the title/caption to use
   const caption = title;
@@ -45,7 +49,7 @@ export function imageRule(
   }
 
   // Compute all HTML attributes
-  const tag = isVideo ? "video" : "img";
+  const tag = isVideo ? "video" : (isIframe ? "iframe" : "img");
   const typeClass = isVideo ? (isGif ? "gif" : "video") : "";
   const verticalClass = isTall ? " media-verytall" : "";
   const className = `responsive${
@@ -54,12 +58,17 @@ export function imageRule(
   const dimAttrs = isImgSizeProcessable
     ? `width="${width}" height="${height}"`
     : "";
-  const labelAttr = isVideo ? "aria-label" : "alt";
+  const labelAttr = isVideo ? "aria-label" : (isIframe ? "title" : "alt");
   const titleAttr = displayTitle ? ` title="${displayTitle}"` : "";
   const videoAttrs = isVideo
     ? (isGif ? " autoplay loop muted playsinline" : " controls")
     : "";
-  const captionHtml = caption ? `<figcaption>${caption}</figcaption>` : "";
+  const iframeAttrs = isIframe
+    ? `frameborder="no" allowtransparency="true" allowfullscreen="true"`
+    : "";
+  const captionHtml = isIframe
+    ? ""
+    : (caption ? `<figcaption>${caption}</figcaption>` : "");
 
   return `<figure>
             <${tag}
@@ -68,7 +77,8 @@ export function imageRule(
               ${dimAttrs}
               ${labelAttr}="${altProcessed}"
               ${titleAttr}
-              ${videoAttrs}>
+              ${videoAttrs}
+              ${iframeAttrs}>
             </${tag}>
             ${captionHtml}
           </figure>`;
