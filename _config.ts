@@ -5,10 +5,6 @@ import readingInfo from "lume/plugins/reading_info.ts";
 import lightningcss from "lume/plugins/lightningcss.ts";
 import base_path from "lume/plugins/base_path.ts";
 import { imageRule } from "./render_image.js";
-// import code_highlight from "lume/plugins/code_highlight.ts";
-// import metas from "lume/plugins/metas.ts";
-// import feed from "lume/plugins/feed.ts";
-// import sitemap from "lume/plugins/sitemap.ts";
 
 const url = ("https://" + Deno.env.get("VERCEL_URL")) || "http://localhost";
 const basePath = Deno.env.get("BASE_PATH") || ""; // "/posts"
@@ -58,9 +54,5 @@ site.use(readingInfo({
 site.use(lightningcss());
 site.use(base_path());
 site.use(inline());
-// site.use(code_highlight());
-// site.use(metas());
-// site.use(feed());
-// site.use(sitemap());
 
 export default site;
