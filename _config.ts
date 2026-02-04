@@ -20,7 +20,6 @@ site.add("media");
 site.add("assets/post-index.css");
 site.add("assets/post-single.css");
 site.add("assets/randompost.js");
-site.add("assets/overflow.js");
 
 // Strip 'content/' from output URLs
 site.preprocess([".md", ".vto"], (pages) => {
