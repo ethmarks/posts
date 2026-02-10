@@ -60,21 +60,21 @@ Leap seconds are a confusing, inconsistent mess that should be abolished.
 
 ![Map of current de facto time zones ](/media/timezones.webp "Time zones of the world")
 
-The image above is a map of UTC's time zones. Each zone represents a different offset from UTC (which is "zeroed" on the Greenwich Royal Observatory in England). Without time zones, noon would occur at different times throughout the world, which would violate UTC's goals. So it offsets the time to try to make noon occur as close to 12:00 as possible all around the world. 
+The image above is a map of UTC's time zones. Each zone represents a different offset from UTC (which is "zeroed" on the Greenwich Royal Observatory in England). Without time zones, noon would occur at different times throughout the world, which would violate UTC's goals. So it offsets the time to try to make noon occur as close to 12:00 as possible all around the world.
 
-Ideally, time zones would be parallel rectangular ribbons. But in reality, they contour to geographical and geopolitical borders for political reasons, which results in wacky and uneven zones. 
+Ideally, time zones would be parallel rectangular ribbons. But in reality, they contour to geographical and geopolitical borders for political reasons, which results in the wacky and uneven zones that you see above.
 
-Most time zones are offset from UTC by a positive or negative whole number of hours, but even this broad statement has a few asterisks. Examples include, Indian Standard Time being 5 hours and 30 minutes offset and Nepal Standard Time being 5 hours and 45 minutes offset.
+Most time zones are offset from UTC by a positive or negative whole number of hours, but even this broad statement has a few asterisks. Examples include Indian Standard Time being 5 hours and 30 minutes offset and Nepal Standard Time being 5 hours and 45 minutes offset.
 
 Because of time zones, "2:00" could mean *literally* any hour depending on where you are relative to where it was said. 
 
-Time zones, too, are a confusing, inconsistent mess that should be abolished.
+Time zones are a confusing, inconsistent mess that should be abolished.
 
 ### Daylight Saving Time
 
 To make UTC's time zones even worse, sometimes the offset changes by an additional hour for daylight saving time (DST). 
 
-DST isn't even consistent across time zones or countries. In the same time zone, some countries respect DST while others don't. In countries that are split across multiple time zones (like the U.S.), some regions respect it and others don't. There's no rhyme or reason, you just have to keep a list of countries that do and don't use DST. This means that just knowing *where* a clock is isn't enough to calculate its UTC offset; you also need to consider what time of year it is.
+In addition to intentionally creating inconsistencies depending on the time of year, DST also adds even more inconsistencies depending on location. Within a single time zone, some countries respect DST while others don't. Within countries that are split across multiple time zones (like the U.S.), some regions respect it and others don't. There's no rhyme or reason to this, so you just have to keep a list of regions that do and don't use DST. Because of DST, knowing *where* a clock is isn't enough to calculate its UTC offset; you also need to consider what time of year it is.
 
 Beyond being a hassle for datetime programmers, DST also has a massive quantifiable cost in both money and human lives. Every year, the lost productivity of people re-adjusting their sleep schedules [costs about $275 million](https://en.wikipedia.org/wiki/Daylight_saving_time#Effects_on_health), and the sleep deprivation [causes about 30 deaths](https://doi.org/10.1257%2Fapp.20140100) from heart attacks, strokes, and sleepiness-induced fatal car crashes.
 
@@ -86,7 +86,9 @@ As much as I pick on UTC, it accomplishes its stated goals admirably. It success
 
 But it shouldn't have to.
 
-Absolute time and relative time are fundamentally different things. Both are very useful and very important, but they are simply not compatible. Absolute time is important for coordinating across the globe (and with satellites and astronauts), and relative time is important for maintaining circadian rhythms so that people don't go insane. However, it simply doesn't make sense to use the same time unit for both absolute and relative time. They are different things and should have different units with different names that are substantially different in value so that people don't conflate them.
+Absolute time and relative time are fundamentally different things. Both are necessary, but they are simply not compatible. Without absolute time, it would be impossible to describe things precisely or to coordinate consistently across the globe. Without relative time, it would be impossible to describe the day/night cycle consistently and people would go insane from sleep deprivation as their circiadian rhythms drifted out of sync. However, it simply doesn't make sense to use the same time unit for both absolute and relative time. They are different and should have different units with different names that are substantially different in value so that people don't conflate them.
+
+Using a natural second when you meant to use a caesium second is objectively wrong and results in inconsistent behavior that causes real problems down the line. Had you accidentally used an hour instead of a second, you would instantly notice your mistake because the output would be immediately wrong by a factor of nearly four thousand. But because mixing up seconds is only wrong by one millionth of a percent, it's very difficult to catch these kinds of mistakes until the errors have compounded over years.
 
 The only reason that seconds continue to be universally used is cultural inertia, and seconds have a **lot** of cultural inertia. With the possible exception of base-10 mathematics, I can't think of any other system that is more deeply rooted into modern human civilization. *Everything* depends on the second.
 
