@@ -48,7 +48,7 @@ UTC tries to do two things simultaneously: use caesium seconds, and make the Sun
 
 To solve the desynchronization problem, UTC just lets the errors build up until they amount to one caesium second's worth, and then they announce a leap second to bring the difference back down. UTC gives 6 months of warning before each leap second, and then leaves the implementation of that leap second as an exercise to datetime programmers around the world. 
 
-Because datetime programmers can't agree on how best to handle leap seconds, different systems handle them slightly differently. Some systems display an extra second at "23:59:60", some display "23:59:59" for two whole seconds, some "smear" the leap second throughout the day, some just blank out entirely during the leap second. Some systems just ignore leap seconds entirely because they've decided that the errors are insignificant enough to not be worth handling properly.
+Because datetime programmers can't agree on how best to handle leap seconds, different systems handle them slightly differently. Some systems display an extra second at "23:59:60", some display "23:59:59" for two whole seconds, some "smear" the leap second throughout the day, and some just blank out entirely during the leap second. Some systems ignore leap seconds completely because they've decided that the errors are insignificant enough that they aren't worth handling properly.
 
 Almost everybody hates leap seconds, [including Google, Amazon, and Meta](https://www.zdnet.com/home-and-office/networking/tech-giants-want-to-put-an-end-to-leap-seconds/). Even BIPM (the organization responsible for UTC) is trying to make leap seconds less frequent as part of [Resolution 4](https://www.bipm.org/en/-/resolution-cgpm-27-4).
 
