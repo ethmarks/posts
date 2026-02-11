@@ -110,7 +110,7 @@ I call it the **Marks system**. It's an eponym based on my last name, but I thin
 
 ### Disclaimer/Foreword
 
-Firstly, even though I believe that the Marks system is genuinely better than our current second-based systems, I'm realistic about my system's chances of being adopted. This is not a naive, pie-in-the-sky manifesto, and realize how difficult it would be to adopt my system in practice. However, please try to suspend your disbelief about implementation feasibility.
+Firstly, even though I believe that the Marks system is genuinely better than our current second-based systems, I'm realistic about my system's chances of being adopted. This is not a naive, pie-in-the-sky manifesto, and I realize how difficult it would be to adopt my system in practice. However, please try to suspend your disbelief about implementation feasibility.
 
 Secondly, the terms and magnitudes that I use are just suggestions. The Marks system is more of a concept than an actual specification. The terms have plenty of wiggle room and are not set in stone; I changed my mind about a few of them in the process of writing this post. So if you object to something about the Marks system, please try to distinguish whether you're objecting to the core concepts or just the naming conventions.
 
@@ -120,21 +120,23 @@ Secondly, the terms and magnitudes that I use are just suggestions. The Marks sy
 >
 > -- [Alexander McKechnie](https://youtu.be/EH-z9gE2uGY?t=147) (@exurb1a)
 
-Almost all measurement systems are based off of human convenience. For example, caesium seconds are based on the properties of caesium-133. Scientists chose caesium-133 simply because it's easy to measure hyperfine transitions of caesium-133 atoms, not because caesium-133 has any fundamental importance. Caesium-134 atoms would have worked just as well (if not for the fact that they're highly radioactive and have a half life of barely 2 years), so the choice of caesium-133 was arbitrary. As another example, the metric system is based largely off of the properties of water. For example, the SI kilogram was originally defined in terms of the SI meter and the density of water: it was equal to 1/1000 of the weight of one cubic meter of pure water. Air would have worked just as well, so the choice of water was arbitrary.
+Almost all measurement systems are based off of human convenience. For example, caesium seconds are based on the properties of caesium-133. Scientists could have chosen to base the second off of any other atom's hyperfine transition frequency (although caesium-133 is cheap and very stable, which makes it convenient, which is why they chose it), so they choice of caesium-133 was arbitrary.
 
-The only reason I had to say "**almost** all measurement systems" is because of the existence of Planck units. Planck units are a system of units that are defined exclusively using the fundamental properties of pure vacuum. These properties include the speed of light, the gravitational constant, and the Planck constant.
+The exceptions to this are Planck units. Planck units are units that are defined exclusively using the fundamental universal properties of pure vacuum. These properties include the speed of light, the gravitational constant, and the Planck constant.
 
-For example, to derive the Planck unit for time, which is called Planck time, all you have to do is multiply the reduced Planck constant by the gravitational constant, divide them by the speed of light raised to the fifth power, and then take the square root of the whole thing. This might sound arbitrary, but it isn't. This formula is the _only_ way to derive a unit of time from the properties of vacuum. If you asked someone who didn't know about Planck units to invent a unit of time using only the properties of vacuum, they would eventually arrive at this same formula. The Planck units are unique, non-arbitrary, and fundamental, which is what make them special.
+For example, to derive the Planck unit for time (which is called "Planck time"), all you have to do is multiply the reduced Planck constant by the gravitational constant, divide them by the speed of light raised to the fifth power, and then take the square root of the whole thing. This formula might sound arbitrary, but it isn't. This formula is the _only_ way to derive a unit of time from the properties of vacuum. If you asked someone who didn't know about Planck units to invent a unit of time using only the properties of vacuum, they would (eventually) independently arrive at this same formula. The Planck units are unique, non-arbitrary, and fundamental, which is what make them special.
 
 The problem with the Planck units is that, because they aren't based on human convenience, they are pretty inconvenient. Shocking, I know.
 
-For example, the Planck time is very, very, very, very small. One day is [approximately](https://www.wolframalpha.com/input?i=N%5Bmean+solar+day+in+planck+time%2C+6%5D) `1.6026x10^48` Planck times. In word form, that's over 1.6 million million billion billion billion billion Planck time. Obviously, this is absurdly small and completely impractical, which is why nobody uses Planck units.
+For example, the Planck time is very, very, very, very small. When you express one Earth day in Planck times, you get [approximately](https://www.wolframalpha.com/input?i=N%5Bmean+solar+day+in+planck+time%2C+6%5D) `1.6026x10^48`. In word form, that's over 1.6 million million billion billion billion billion Planck times. Obviously, this is an absurdly large and completely impractical number, which is why nobody uses Planck units.
 
-The goal of the Marks system is to bridge the elegance and fundamentality of Planck units and the human-scale convenience of the metric and customary systems.
+The goal of the Marks system is to add a _tiny_ bit of arbitrariness to make Planck units as convenient as the metric or customary systems.
 
 ### Marks Prefixes
 
-One of the best parts about the metric system is the [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix#List_of_SI_prefixes). Rather than inventing entirely new words and ratios for each unit like the customary system does, the metric system uses power-of-ten prefixes to convert between its units. For example, because "kilo" means "1000", a **kilo**meter is exactly 1000 meters. SI prefixes are very elegant and very coherent, and in my opinion they are far superior to the avoirdupois (customary) system's seemingly random conversion ratios such as "1 mile equals exactly 5280 feet" and "1 ounce equals exactly 437.5 grains".
+One of the best parts about the metric system is the [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix#List_of_SI_prefixes). Rather than inventing entirely new words and ratios for each unit like the customary system does, the metric system uses power-of-ten prefixes to convert between its units. For example, because "kilo" means "1000", a **kilo**meter is exactly 1000 meters.
+
+SI prefixes are very elegant and very coherent, and in my opinion they are far superior to the customary system's seemingly random conversion ratios such as "1 mile equals exactly 5280 feet" and "1 ounce equals exactly 437.5 grains".
 
 However, there aren't SI prefixes for every magnitude, most notably for 10,000 and 100,000. This might not seem important, but the Marks system really needs prefixes for these magnitudes in order to make convenient scales.
 
@@ -154,15 +156,15 @@ Remember that these terms are just suggestions and are not set in stone. The tab
 | `10^-34` | Triantessera- | Derived from the Greek phrase "[triantatessera](https://translate.google.com/?sl=el&tl=en&text=triantatessera&op=translate)", meaning "thirty-four", because it's ten to the minus thirty-four |
 | `10^10` | Rahng- | Derived from the romanized form of the Pinyin pronunciation of [穰](https://en.wikipedia.org/wiki/Chinese_numerals#Large_numbers:~:text=%E7%A9%B0), the Chinese short scale numeral for `10^10` |
 
-## Tims
+## Tim
 
 ![A famous scene from the film 'Monty Python and the Holy Grail' depicting an enchanter wearing mountain sheep horns with the text 'There are some who call me Tim'](/media/somewhocallmetim.webp)
 
-**Tims** are the fundamental unit of time for the Marks system. It's pronounced `/tɪm/` (exactly like how it looks).
+The **tim** is the fundamental unit of time for the Marks system. It's pronounced `/tɪm/` (exactly like how it looks).
 
 ### Etymology
 
-Tims get their name from the first three letters of the word "time". This is a convention of my suggested terms for the Marks system.
+Tims get their name from the first three letters of the word "**tim**e". This is a convention of my suggested terms for the Marks system.
 
 ### Definition
 
@@ -174,24 +176,38 @@ Combining tims with prefixes, you get a variety of supermultiples and submultipl
 
 | Unit        | Tims               | Equivalent        |
 | ----------- | ------------------ | ----------------- |
-| Tetrakontim | `10^-44` Tims      | 1 Planck time     |
-| Millitim    | 0.001 Tims         | 5.39 milliseconds |
-| Decitim     | 0.1 Tims           | 0.54 seconds      |
-| Tim         | 1 Tim              | 5.39 seconds      |
-| Decatim     | 10 Tims            | 0.89 minutes      |
-| Hectotim    | 100 Tims           | 8.98 minutes      |
-| Kilotim     | 1,000 Tims         | 1.49 hours        |
-| Myriatim    | 10,000 Tims        | 0.62 days         |
-| Lakhtim     | 100,000 Tims       | 0.81 weeks        |
-| Megatim     | 1,000,000 Tims     | 2.05 months       |
-| Hebdotim    | 10,000,000 Tims    | 1.71 years        |
-| Gigatim     | 1,000,000,000 Tims | 1.71 centuries    |
+| Tetrakontim | `10^-44` tims      | 1 Planck time     |
+| Millitim    | 0.001 tims         | 5.39 milliseconds |
+| Decitim     | 0.1 tims           | 0.54 seconds      |
+| Tim         | 1 tim              | 5.39 seconds      |
+| Decatim     | 10 tims            | 0.89 minutes      |
+| Hectotim    | 100 tims           | 8.98 minutes      |
+| Kilotim     | 1,000 tims         | 1.49 hours        |
+| Myriatim    | 10,000 tims        | 0.62 days         |
+| Lakhtim     | 100,000 tims       | 0.81 weeks        |
+| Megatim     | 1,000,000 tims     | 2.05 months       |
+| Hebdotim    | 10,000,000 tims    | 1.71 years        |
+| Gigatim     | 1,000,000,000 tims | 1.71 centuries    |
+
+### Conversions
+
+Here are a few common second-based time units expressed in multiples of tims. They don't map very evenly, which is intentional. More on that later.
+
+| Unit     | Tims            |
+| -------- | --------------- |
+| 1 second | 0.185 tims      |
+| 1 minute | 1.113 decatims  |
+| 1 hour   | 0.667 kilotims  |
+| 1 day    | 1.603 myriatims |
+| 1 week   | 1.122 lakhtims  |
+| 1 month  | 0.488 megatims  |
+| 1 year   | 0.585 hebdotims |
 
 ### Examples
 
-Here are a few common durations expressed in tims.
+Here are a few common everyday durations expressed in tims.
 
-| Time                   | Tims                          |
+| Duration               | Tims                          |
 | ---------------------- | ----------------------------- |
 | Human eye blink        | 65 millitims                  |
 | Hummingbird wing beat  | 3 millitims                   |
@@ -224,15 +240,15 @@ And besides, you'll see later why the fact that tims are different from seconds 
 
 That's actually the **second** time I've heard that objection. It's actually a pretty **minute** point when you compare it to how much semantic overlap second-based units have.
 
-## Lens
+## Len
 
 ![A statue of Vladimir Lenin with the text 'There are some who call me Len'](/media/somewhocallmelen.webp)
 
-**Lens** are the fundamental unit of length for the Marks system. It's pronounced `/lɛn/` (exactly like how it looks).
+The **len** is the fundamental unit of length for the Marks system. It's pronounced `/lɛn/` (exactly like how it looks).
 
 ### Etymology
 
-Lens get their name from the first three letters of the word "length".
+Lens get their name from the first three letters of the word "**len**gth".
 
 ### Definition
 
@@ -244,18 +260,18 @@ Combining lens with prefixes, you get a variety of supermultiples and submultipl
 
 | Unit            | Lens           | Equivalents(s)               |
 | --------------- | -------------- | ---------------------------- |
-| Triantesseralen | `10^-34` Lens  | 1 Planck length              |
-| Millilen        | 0.001 Lens     | 0.161 millimeters            |
-| Decilen         | 0.1 Lens       | 1.6 centimeters (0.6 inches) |
-| Len             | 1 Len          | 16 centimeters (6.3 inches)  |
-| Decalen         | 10 Lens        | 1.6 meters (5.3 feet)        |
-| Hectolen        | 100 Lens       | 16 meters (53 feet)          |
-| Kilolen         | 1,000 Lens     | 161 meters (530 feet)        |
-| Myrialen        | 10,000 Lens    | 1.6 kilometers (1.00 miles)  |
-| Lahklen         | 100,000 Lens   | 16 kilometers (10 miles)     |
-| Megalen         | 1,000,000 Lens | 161 kilometers               |
+| Triantesseralen | `10^-34` lens  | 1 Planck length              |
+| Millilen        | 0.001 lens     | 0.161 millimeters            |
+| Decilen         | 0.1 lens       | 1.6 centimeters (0.6 inches) |
+| Len             | 1 len          | 16 centimeters (6.3 inches)  |
+| Decalen         | 10 lens        | 1.6 meters (5.3 feet)        |
+| Hectolen        | 100 lens       | 16 meters (53 feet)          |
+| Kilolen         | 1,000 lens     | 161 meters (530 feet)        |
+| Myrialen        | 10,000 lens    | 1.6 kilometers (1.00 miles)  |
+| Lahklen         | 100,000 lens   | 16 kilometers (10 miles)     |
+| Megalen         | 1,000,000 lens | 161 kilometers               |
 
-Note that 1 myrialen is very similar in length to 1 customary mile.
+Note that 1 myrialen happens to be very similar in length to 1 customary mile.
 
 ### Examples
 
