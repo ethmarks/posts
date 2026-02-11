@@ -154,6 +154,7 @@ Remember that these terms are just suggestions and are not set in stone. The tab
 | `10^7` | Hebdo- | A pre-existing prefix: <https://en.wikipedia.org/wiki/Hebdo-> | 
 | `10^-44` | Tetrakon- | Derived from the Greek word "[tetrakontatessera](https://translate.google.com/?sl=el&tl=en&text=tetrakontatessera&op=translate)", meaning "forty-four", because it's ten to the minus forty-four |
 | `10^-34` | Triantessera- | Derived from the Greek phrase "[triantatessera](https://translate.google.com/?sl=el&tl=en&text=triantatessera&op=translate)", meaning "thirty-four", because it's ten to the minus thirty-four |
+| `10^-8` | Ogdo- | Derived from the Greek word "[ogdoos](https://translate.google.com/?sl=el&tl=en&text=ogdoos&op=translate)", meaining "eighth", because it's ten to the minus eight |
 | `10^10` | Rahng- | Derived from the romanized form of the Pinyin pronunciation of [穰](https://en.wikipedia.org/wiki/Chinese_numerals#Large_numbers:~:text=%E7%A9%B0), the Chinese short scale numeral for `10^10` |
 
 ## Tim
@@ -168,7 +169,7 @@ Tims get their name from the first three letters of the word "**tim**e". This is
 
 ### Definition
 
-1 tim is defined as exactly `10^44` Planck times. This is [approximately](https://www.wolframalpha.com/input?i=10%5E44+planck+time) 5.391 caesium seconds.
+1 tim is defined as exactly `10^44` Planck times. This is [approximately](https://www.wolframalpha.com/input?i=10%5E44+planck+times) 5.391 caesium seconds.
 
 ### Multiples
 
@@ -252,7 +253,7 @@ Lens get their name from the first three letters of the word "**len**gth".
 
 ### Definition
 
-1 len is defined as exactly `10^34` Planck lengths. This is [approximately](https://www.wolframalpha.com/input?i=10%5E34+planck+length) 16.163 centimeters, or 6.36 inches.
+1 len is defined as exactly `10^34` Planck lengths. This is [approximately](https://www.wolframalpha.com/input?i=10%5E34+planck+lengths) 16.163 centimeters, or 6.36 inches.
 
 ### Multiples
 
@@ -296,3 +297,66 @@ Here are a few common lengths expressed in lens. It's a stylistic choice whether
 ### Why 10^34?
 
 I chose to define 1 len at exactly `10^34` Planck lengths because it results in a convenient human-scale length. Again, this was an arbitrary choice on my part, and there are other values that would have worked.
+
+## Maz
+
+![An image of Maz Kanata from Star Wars with the text 'There are some who call me Maz'](/media/somewhocallmemaz.webp)
+
+The **maz** is the fundamental unit of mass for the Marks system. It's pronounced `/mɑːz/` (with a long 'a' like in "car").
+
+### Etymology
+
+Maz gets its name from "mass", but it's pronounced and spelled differently in order to make it distinct.
+
+Had I named it "mas" to follow the truncation convention set by tims and lens, it would be impossible to tell "mass" and "mas" apart when spoken aloud. By backing the "a" and voicing the "s" (turning it into a "z"), the unit (maz) is phonetically and orthographically distinct from the dimensionality (mass).
+
+Notably, unlike tims and lens which follow normal English pluralization rules, maz use the same word for both the singular and plural form: "maz". I did this because the normal English plural form of "maz" is "mazes", which is multisyllabic and is also a homograph for the plural form of "maze" (like a hedge maze).
+
+### Definition
+
+1 maz is defined as exactly `10^8` Planck masses. This is [approximately](https://www.wolframalpha.com/input?i=10%5E8+planck+masses) 2.176 kilograms, or 4.798 pounds.
+
+### Multiples
+
+Combining maz with prefixes, you get a variety of supermultiples and submultiples to efficiently describe different mass scales. The table below lists a few of the most useful ones.
+
+| Unit     | Maz          | Equivalents(s)               |
+| -------- | ------------ | ---------------------------- |
+| Picomaz  | `10^-12` maz | 2 nanograms                  |
+| Nanomaz  | `10^-9` maz  | 2 micrograms                 |
+| Ogdomaz  | `10^-8` maz  | 1 Planck mass                |
+| Micromaz | `10^-6` maz  | 2 milligrams                 |
+| Millimaz | 0.001 maz    | 2 grams                      |
+| Decimaz  | 0.1 maz      | 217 grams (0.5 pounds)       |
+| Maz      | 1 maz        | 2.2 kilograms (4.8 pounds)   |
+| Decamaz  | 10 maz       | 22 kilograms (48 pounds)     |
+| Hectomaz | 100 maz      | 218 kilograms (480 pounds)   |
+| Kilomaz  | 1,000 maz    | 2176 kilograms (4798 pounds) |
+
+Note that, because 1 Planck mass is actually a surprisingly human-scale, the ogdomaz is not the smallest common multiple.
+
+### Examples
+
+Here are the masses of a few common objects expressed in maz.
+
+| Object                                  | Maz                     |
+| --------------------------------------- | ----------------------- |
+| Mosquito                                | 27 nanomaz              |
+| Paperclip                               | 0.5 millimaz            |
+| US penny                                | 1.1 millimaz            |
+| Banana                                  | 54 millimaz             |
+| Basketball                              | 287 millimaz            |
+| Macbook Air                             | 570 millimaz            |
+| Global average adult human (70kg/154lb) | 32 maz                  |
+| Giant panda                             | 58 maz                  |
+| Upright piano                           | 102 maz                 |
+| Bluefin tuna                            | 206 maz                 |
+| Compact car                             | 386 maz                 |
+| TEU shipping container                  | 1 kilomaz (1,048 maz)   |
+| American school bus                     | 2.7 kilomaz (2,709 maz) |
+
+### Why 10^8?
+
+I chose to define 1 maz at exactly `10^8` Planck masses because it results in a convenient human-scale mass. As usual, this was an arbitrary choice on my part, and there are other values that would have worked.
+
+One reason that I chose `10^8` is that people are vain. For example, the reason that [British imperial stone](<https://en.wikipedia.org/wiki/Stone_(unit)>) are still used is because they make the majority of human body weights fall between 6-25 stone. In customary pounds, this same range is 84-350 pounds. People prefer using measurement systems that make body weights have smaller numbers. Regardless of your opinion on this practice, it seems reasonable to meet people where they are.
