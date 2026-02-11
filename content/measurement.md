@@ -18,21 +18,21 @@ The natural second has an exact-valued relationship with the length of the day (
 
 ### Caesium Seconds
 
-Both the SI (metric) system and the customary (U.S.) system define _all_ of their units in terms of the second, one way or another. The SI meter is defined as "the distance that light travels in a vacuum during 1/299,792,458 of a second". If you didn't know how long a "second" is, you also wouldn't know how long a meter is, so the definition of a meter relies on the definition of a second.
+Both the SI (metric) system and the customary (U.S.) system define _all_ of their units in terms of the second, one way or another. The SI meter is defined as "the distance that light travels in a vacuum during `1/299,792,458` of a second". If you didn't know how long a "second" is, you also wouldn't know how long a meter is, so the definition of a meter relies on the definition of a second.
 
-Even units that aren't directly defined via seconds can still be reliant on it. For example, the customary foot is defined as _exactly_ 0.3048 meters, so because it's based on meters and meters are based on seconds, the customary foot is ultimately based on seconds. Likewise, because the SI kilogram is defined in terms of the speed of light, the Planck constant, and the SI meter, it too is based on seconds. The customary pound is defined as exactly 0.45359237 kilograms, so it relies on kilograms which rely on meters which rely on seconds. _Every_ unit ultimately relies on the second. Because of this, it's absolutely critical that we know **exactly** how long a second is.
+Even units that aren't directly defined via seconds can still be reliant on it. For example, the customary foot is defined as _exactly_ `0.3048` meters, so because it's based on meters and meters are based on seconds, the customary foot is ultimately based on seconds. Likewise, because the SI kilogram is defined in terms of the speed of light, the Planck constant, and the SI meter, it too is based on seconds. The customary pound is defined as exactly `0.45359237` kilograms, so it relies on kilograms which rely on meters which rely on seconds. _Every_ unit ultimately relies on the second. Because of this, it's absolutely critical that we know **exactly** how long a second is.
 
 The natural second is not good enough for this. The natural second is defined in terms of the length of the day, and the length of the day changes a tiny, tiny amount every day (mainly due to the Moon's gravitational pull gradually slowing Earth's rotation over the course of millions of years). Because of this, the definition of a natural second is ever so slightly different every day. This is obviously unacceptable; nobody wants to update yardsticks because the definition of a foot changed.
 
-So scientists decided to use a unit of time that doesn't ever change: the ground-state hyperfine transition of a caesium-133 atom. That's a lot of jargon, but all you need to know is that it's a very specific duration of time that is extremely stable and can be reproducibly measured using laboratory equipment. The only problem is that it's very, very, very small: approximately 9 billion times smaller than a natural second. So the solution was to define "second" to mean "the ground-state hyperfine transition of a caesium-133 atom multiplied by exactly 9,192,631,770". This definition also has several names, including "SI second", "atomic second", and "proper second". I'm going to call it the "caesium second".
+So scientists decided to use a unit of time that doesn't ever change: the ground-state hyperfine transition of a caesium-133 atom. That's a lot of jargon, but all you need to know is that it's a very specific duration of time that is extremely stable and can be reproducibly measured using laboratory equipment. The only problem is that it's very, very, very small: approximately 9 billion times smaller than a natural second. So the solution was to define "second" to mean "the ground-state hyperfine transition of a caesium-133 atom multiplied by exactly `9,192,631,770`". This definition also has several names, including "SI second", "atomic second", and "proper second". I'm going to call it the "caesium second".
 
 ### The difference
 
-A caesium second is approximately equal to a natural second, but it's not _exact_. The percent difference is usually [around](https://www.wolframalpha.com/input?i=%28%28mean+solar+day+%2F+86400%29+-+SI+second%29+%2F+%28%28%28mean+solar+day+%2F+86400%29+%2B+SI+second%29+%2F+2%29) 0.000002%, which is so small that the two seconds are often considered "close enough", the subtle differences between them are ignored, and the two are used interchangeably, despite being fundamentally different. More on that later.
+A caesium second is approximately equal to a natural second, but it's not _exact_. The percent difference is usually [around](https://www.wolframalpha.com/input?i=%28%28mean+solar+day+%2F+86400%29+-+SI+second%29+%2F+%28%28%28mean+solar+day+%2F+86400%29+%2B+SI+second%29+%2F+2%29) `0.000002%`, which is so small that the two seconds are often considered "close enough", the subtle differences between them are ignored, and the two are used interchangeably, despite being fundamentally different. More on that later.
 
 Anyways, if we define a "second" to mean a caesium second, the answer to "How many seconds are in a day?" is [approximately](https://www.wolframalpha.com/input?i=SI+seconds+in+a+mean+solar+day) 86,400.002.
 
-## Why it matters
+### Why it matters
 
 This might sound like pedantic hair-splitting. And okay, it kind of is. But the difference between caesium seconds and natural seconds does have real consequences.
 
@@ -44,7 +44,7 @@ UTC tries to do two things simultaneously: use caesium seconds, and make the Sun
 
 ![A comic where someone says 'Event 1 happened at time T_1. Event 2 happened at time T_2. How would you calculate how much time elapsed between T_1 and T_2?'. The comic splits into two possible responses, one from a normal person who replies 'T_2 minus T_1' and one from a datetime engineer who replies 'It is impossible to know and a sin to ask!'](/media/xkcd_2867.webp "xkcd.com/2867")
 
-### Leap Seconds
+#### Leap Seconds
 
 To solve the desynchronization problem, UTC just lets the errors build up until they amount to one caesium second's worth, and then they announce a leap second to bring the difference back down. UTC gives 6 months of warning before each leap second, and then leaves the implementation of that leap second as an exercise to datetime programmers around the world.
 
@@ -56,7 +56,7 @@ Oh, and also it's possible that UTC will add a [negative leap second](https://qn
 
 Leap seconds are a confusing, inconsistent mess that should be abolished.
 
-### Time Zones
+#### Time Zones
 
 ![Map of current de facto time zones ](/media/timezones.webp "Time zones of the world")
 
@@ -70,7 +70,7 @@ Because of time zones, "2:00" could mean _literally_ any hour depending on where
 
 Time zones are a confusing, inconsistent mess that should be abolished.
 
-### Daylight Saving Time
+#### Daylight Saving Time
 
 To make UTC's time zones even worse, sometimes the offset changes by an additional hour for daylight saving time (DST).
 
@@ -80,7 +80,7 @@ Beyond being a hassle for datetime programmers, DST also has a massive quantifia
 
 DST is an expensive, lethal, confusing, and inconsistent mess that should be abolished.
 
-## Seconds are a bad unit of time
+### Seconds are a bad unit of time
 
 As much as I pick on UTC, it accomplishes its stated goals admirably. It successfully manages the impossible task of reconciling caesium seconds with natural seconds.
 
@@ -88,7 +88,7 @@ But it shouldn't have to.
 
 Absolute time and relative time are fundamentally different things. Both are necessary, but they are simply not compatible. Without absolute time, it would be impossible to describe things precisely or to coordinate consistently across the globe. Without relative time, it would be impossible to describe the day/night cycle consistently and people would go insane from sleep deprivation as their circiadian rhythms drifted out of sync. However, it simply doesn't make sense to use the same time unit for both absolute and relative time. They are different and should have different units with different names that are substantially different in value so that people don't conflate them.
 
-Using a natural second when you meant to use a caesium second is objectively wrong and results in inconsistent behavior that causes real problems down the line. Had you accidentally used an hour instead of a second, you would instantly notice your mistake because the output would be immediately wrong by a factor of nearly four thousand. But because mixing up seconds is only wrong by one millionth of a percent, it's very difficult to catch these kinds of mistakes until the errors have compounded over years.
+Using a natural second when you meant to use a caesium second is objectively wrong and results in inconsistent behavior that causes real problems down the line. Had you accidentally used an hour instead of a second, you would instantly notice your mistake because the output would be immediately wrong by a factor of nearly four thousand. But because mixing up seconds is only wrong by two millionths of a percent, it's very difficult to catch these kinds of mistakes until the errors have compounded over years.
 
 The only reason that seconds continue to be universally used is cultural inertia, and seconds have a **lot** of cultural inertia. With the possible exception of base-10 mathematics, I can't think of any other system that is more deeply rooted into modern human civilization. _Everything_ depends on the second.
 
@@ -100,4 +100,183 @@ Even if we had a better time unit, retrofitting _all technology_ to the new stan
 
 There is no escape from the second, and there never will be.
 
-## Except...
+## The Marks System
+
+...but what if there was?
+
+I have an idea for a measurement and timekeeping system that uses neither caesium seconds nor natural seconds.
+
+I call it the **Marks system**. It's an eponym based on my last name, but I think that it sounds fittingly generic for a measurement system.
+
+### Disclaimer/Foreword
+
+Firstly, even though I believe that the Marks system is genuinely better than our current second-based systems, I'm realistic about my system's chances of being adopted. This is not a naive, pie-in-the-sky manifesto, and realize how difficult it would be to adopt my system in practice. However, please try to suspend your disbelief about implementation feasibility.
+
+Secondly, the terms and magnitudes that I use are just suggestions. The Marks system is more of a concept than an actual specification. The terms have plenty of wiggle room and are not set in stone; I changed my mind about a few of them in the process of writing this post. So if you object to something about the Marks system, please try to distinguish whether you're objecting to the core concepts or just the naming conventions.
+
+### Planck Units
+
+> Planck units are the master units of reality. They're not defined by silly human measurements, they're made of other constants. If there is a God, He's probably using these to boil His tea and put up His shelves.
+>
+> -- [Alexander McKechnie](https://youtu.be/EH-z9gE2uGY?t=147) (@exurb1a)
+
+Almost all measurement systems are based off of human convenience. For example, caesium seconds are based on the properties of caesium-133. Scientists chose caesium-133 simply because it's easy to measure hyperfine transitions of caesium-133 atoms, not because caesium-133 has any fundamental importance. Caesium-134 atoms would have worked just as well (if not for the fact that they're highly radioactive and have a half life of barely 2 years), so the choice of caesium-133 was arbitrary. As another example, the metric system is based largely off of the properties of water. For example, the SI kilogram was originally defined in terms of the SI meter and the density of water: it was equal to 1/1000 of the weight of one cubic meter of pure water. Air would have worked just as well, so the choice of water was arbitrary.
+
+The only reason I had to say "**almost** all measurement systems" is because of the existence of Planck units. Planck units are a system of units that are defined exclusively using the fundamental properties of pure vacuum. These properties include the speed of light, the gravitational constant, and the Planck constant.
+
+For example, to derive the Planck unit for time, which is called Planck time, all you have to do is multiply the reduced Planck constant by the gravitational constant, divide them by the speed of light raised to the fifth power, and then take the square root of the whole thing. This might sound arbitrary, but it isn't. This formula is the _only_ way to derive a unit of time from the properties of vacuum. If you asked someone who didn't know about Planck units to invent a unit of time using only the properties of vacuum, they would eventually arrive at this same formula. The Planck units are unique, non-arbitrary, and fundamental, which is what make them special.
+
+The problem with the Planck units is that, because they aren't based on human convenience, they are pretty inconvenient. Shocking, I know.
+
+For example, the Planck time is very, very, very, very small. One day is [approximately](https://www.wolframalpha.com/input?i=N%5Bmean+solar+day+in+planck+time%2C+6%5D) `1.6026x10^48` Planck times. In word form, that's over 1.6 million million billion billion billion billion Planck time. Obviously, this is absurdly small and completely impractical, which is why nobody uses Planck units.
+
+The goal of the Marks system is to bridge the elegance and fundamentality of Planck units and the human-scale convenience of the metric and customary systems.
+
+### Marks Prefixes
+
+One of the best parts about the metric system is the [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix#List_of_SI_prefixes). Rather than inventing entirely new words and ratios for each unit like the customary system does, the metric system uses power-of-ten prefixes to convert between its units. For example, because "kilo" means "1000", a **kilo**meter is exactly 1000 meters. SI prefixes are very elegant and very coherent, and in my opinion they are far superior to the avoirdupois (customary) system's seemingly random conversion ratios such as "1 mile equals exactly 5280 feet" and "1 ounce equals exactly 437.5 grains".
+
+However, there aren't SI prefixes for every magnitude, most notably for 10,000 and 100,000. This might not seem important, but the Marks system really needs prefixes for these magnitudes in order to make convenient scales.
+
+So I decided to extend the SI prefixes for a few important magnitudes that the official SI prefix specification omits.
+
+When possible, I used existing unofficial SI prefixes, but a few magnitudes didn't have _any_ proposed prefixes so I had to make up my own. I took inspiration from the numeral systems of other cultures because they often have succinct, cool-sounding words for numbers.
+
+Remember that these terms are just suggestions and are not set in stone. The table below is ordered from most to least important, not by scale.
+
+<!-- prettier-ignore -->
+| Magnitude | Prefix | Reasoning |
+| --- | --- | --- |
+| `10^4` | Myria | A pre-existing prefix: <https://en.wikipedia.org/wiki/Myria-> |
+| `10^5` | Lakh- | Derived from [Lakh](https://en.wikipedia.org/wiki/Lakh), the Indian numbering system word for 100,000  |
+| `10^7` | Hebdo- | A pre-existing prefix: <https://en.wikipedia.org/wiki/Hebdo-> | 
+| `10^-44` | Tetrakon- | Derived from the Greek word "[tetrakontatessera](https://translate.google.com/?sl=el&tl=en&text=tetrakontatessera&op=translate)", meaning "forty-four", because it's ten to the minus forty-four |
+| `10^-34` | Triantessera- | Derived from the Greek phrase "[triantatessera](https://translate.google.com/?sl=el&tl=en&text=triantatessera&op=translate)", meaning "thirty-four", because it's ten to the minus thirty-four |
+| `10^10` | Rahng- | Derived from the romanized form of the Pinyin pronunciation of [穰](https://en.wikipedia.org/wiki/Chinese_numerals#Large_numbers:~:text=%E7%A9%B0), the Chinese short scale numeral for `10^10` |
+
+## Tims
+
+![A famous scene from the film 'Monty Python and the Holy Grail' depicting an enchanter wearing mountain sheep horns with the text 'There are some who call me Tim'](/media/somewhocallmetim.webp)
+
+**Tims** are the fundamental unit of time for the Marks system. It's pronounced `/tɪm/` (exactly like how it looks).
+
+### Etymology
+
+Tims get their name from the first three letters of the word "time". This is a convention of my suggested terms for the Marks system.
+
+### Definition
+
+1 tim is defined as exactly `10^44` Planck times. This is [approximately](https://www.wolframalpha.com/input?i=10%5E44+planck+time) 5.391 caesium seconds.
+
+### Multiples
+
+Combining tims with prefixes, you get a variety of supermultiples and submultiples to efficiently describe different time scales. The table below lists a few of the most useful ones.
+
+| Unit        | Tims               | Equivalent        |
+| ----------- | ------------------ | ----------------- |
+| Tetrakontim | `10^-44` Tims      | 1 Planck time     |
+| Millitim    | 0.001 Tims         | 5.39 milliseconds |
+| Decitim     | 0.1 Tims           | 0.54 seconds      |
+| Tim         | 1 Tim              | 5.39 seconds      |
+| Decatim     | 10 Tims            | 0.89 minutes      |
+| Hectotim    | 100 Tims           | 8.98 minutes      |
+| Kilotim     | 1,000 Tims         | 1.49 hours        |
+| Myriatim    | 10,000 Tims        | 0.62 days         |
+| Lakhtim     | 100,000 Tims       | 0.81 weeks        |
+| Megatim     | 1,000,000 Tims     | 2.05 months       |
+| Hebdotim    | 10,000,000 Tims    | 1.71 years        |
+| Gigatim     | 1,000,000,000 Tims | 1.71 centuries    |
+
+### Examples
+
+Here are a few common durations expressed in tims.
+
+| Time                   | Tims                          |
+| ---------------------- | ----------------------------- |
+| Human eye blink        | 65 millitims                  |
+| Hummingbird wing beat  | 3 millitims                   |
+| Time to cook an egg    | 39 tims                       |
+| Average pop song       | 36 tims                       |
+| Average urban commute  | 3.3 hectotims (336 tims)      |
+| REM sleep cycle        | 2.7 hectotims (278 tims)      |
+| Earth day              | 1.6 myriatims (16,030 tims)   |
+| Moon orbit             | 4.37 lakhtims                 |
+| Average human lifespan | 42 hebdotims                  |
+| Age of great pyramid   | 26 gigatims (2,600 hebdotims) |
+
+### Why 10^44?
+
+I chose to define 1 tim at exactly `10^44` Planck times because it results in a convenient human-scale amount of time. This was just an arbitrary choice on my part; `10^43` would also work. However, I think that `10^44` strikes a good balance between being too short and too long and it results in convenient multiples.
+
+### Are tims too long?
+
+Tims are considerably longer than seconds. Rather than being 1 second long (approximately the frequency of a human heartbeat), a tim is over 5 seconds long. This is a massive departure from the fundamental time unit that everyone is used too. To count by tims, you'd say "one", wait for what feels like ages, and then get to say "two". I know that this seems alien and foreign and inconvenient.
+
+However, it's important to distinguish between cultural inertia and fundamental inconvenience. I believe that the reason that tims seem "wrong" is primarily inertia, which is a matter of implementation feasibility, which we agreed to suspend disbelief about. Imagine that we can magically just instantly make everyone acclimated to tims.
+
+In this scenario, I think that tims would be feel like a natural, convenient scale. This wouldn't work if I set a tim equal to like 50 seconds or something; that would always be inconvenient no matter how used to it people are. But I think that tims are within the range of human adaptability.
+
+And if you need a less coarse unit of time than the tim, the decitim is quite convenient. It's even more precise than the second without being overly precise like the millisecond.
+
+And besides, you'll see later why the fact that tims are different from seconds by such a huge amount is actually one of the greatest strengths of the Marks system.
+
+### Doesn't this conflict with the name "Tim"?
+
+That's actually the **second** time I've heard that objection. It's actually a pretty **minute** point when you compare it to how much semantic overlap second-based units have.
+
+## Lens
+
+![A statue of Vladimir Lenin with the text 'There are some who call me Len'](/media/somewhocallmelen.webp)
+
+**Lens** are the fundamental unit of length for the Marks system. It's pronounced `/lɛn/` (exactly like how it looks).
+
+### Etymology
+
+Lens get their name from the first three letters of the word "length".
+
+### Definition
+
+1 len is defined as exactly `10^34` Planck lengths. This is [approximately](https://www.wolframalpha.com/input?i=10%5E34+planck+length) 16.163 centimeters, or 6.36 inches.
+
+### Multiples
+
+Combining lens with prefixes, you get a variety of supermultiples and submultiples to efficiently describe different distance scales. The table below lists a few of the most useful ones.
+
+| Unit            | Lens           | Equivalents(s)               |
+| --------------- | -------------- | ---------------------------- |
+| Triantesseralen | `10^-34` Lens  | 1 Planck length              |
+| Millilen        | 0.001 Lens     | 0.161 millimeters            |
+| Decilen         | 0.1 Lens       | 1.6 centimeters (0.6 inches) |
+| Len             | 1 Len          | 16 centimeters (6.3 inches)  |
+| Decalen         | 10 Lens        | 1.6 meters (5.3 feet)        |
+| Hectolen        | 100 Lens       | 16 meters (53 feet)          |
+| Kilolen         | 1,000 Lens     | 161 meters (530 feet)        |
+| Myrialen        | 10,000 Lens    | 1.6 kilometers (1.00 miles)  |
+| Lahklen         | 100,000 Lens   | 16 kilometers (10 miles)     |
+| Megalen         | 1,000,000 Lens | 161 kilometers               |
+
+Note that 1 myrialen is very similar in length to 1 customary mile.
+
+### Examples
+
+Here are a few common lengths expressed in lens. It's a stylistic choice whether to primarily use len and myrialen or to use some of the more specific len multiples.
+
+| Length                | Lens                          |
+| --------------------- | ----------------------------- |
+| Width of a human hair | 464 microlens                 |
+| Grain of table salt   | 1.8 millilens                 |
+| Paperclip             | 2 decilens                    |
+| Chicken egg           | 3.5 decilens                  |
+| Banana                | 1.2 lens                      |
+| Bowling pin           | 2.3 lens                      |
+| Electric guitar       | 6 lens                        |
+| Average human height  | 1 decalen (10 lens)           |
+| African elephant      | 4 decalens (40 lens)          |
+| Blue whale            | 1.5 hectolens (150 lens)      |
+| Brooklyn bridge       | 3 kilolens (3,000 lens)       |
+| Grand canyon          | 2.7 megalens (270 myrialens)  |
+| Australia             | 24 megalens (2,400 myrialens) |
+
+### Why 10^34?
+
+I chose to define 1 len at exactly `10^34` Planck lengths because it results in a convenient human-scale length. Again, this was an arbitrary choice on my part, and there are other values that would have worked.
