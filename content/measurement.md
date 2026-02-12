@@ -346,7 +346,8 @@ Here are the masses of a few common objects expressed in maz.
 | US penny                                | 1.1 millimaz            |
 | Banana                                  | 54 millimaz             |
 | Basketball                              | 287 millimaz            |
-| Macbook Air                             | 570 millimaz            |
+| Macbook Air                             | 0.57 maz                |
+| Clay brick                              | 0.9 maz                 |
 | Global average adult human (70kg/154lb) | 32 maz                  |
 | Giant panda                             | 58 maz                  |
 | Upright piano                           | 102 maz                 |
@@ -360,3 +361,40 @@ Here are the masses of a few common objects expressed in maz.
 I chose to define 1 maz at exactly `10^8` Planck masses because it results in a convenient human-scale mass. As usual, this was an arbitrary choice on my part, and there are other values that would have worked.
 
 One reason that I chose `10^8` is that people are vain. For example, the reason that [British imperial stone](<https://en.wikipedia.org/wiki/Stone_(unit)>) are still used is because they make the majority of human body weights fall between 6-25 stone. In customary pounds, this same range is 84-350 pounds. People prefer using measurement systems that make body weights have smaller numbers. Regardless of your opinion on this practice, it seems reasonable to meet people where they are.
+
+## Derived Units
+
+Now that we have Marks units for the Big Three fundamental dimensionalities (time, length, and mass), we can combine them to create Marks units for the derived dimensionalities.
+
+The Marks system uses metric-style 1:1 dimensionality combining. In other words, because "velocity" equals "length divided by time", 1 of our unit of velocity is exactly equal to 1 of our unit of length divided by 1 of our unit of time.
+
+To prevent this post from being 10,000 words long, I'm going to put a bunch of them in a table rather than giving each their own section. Each of their multiples follow the same convention as the other Marks units.
+
+| Unit | Dimensionality   | Definition    | Pronounciation | si Equivalent |
+| ---- | ---------------- | ------------- | -------------- | ------------- |
+| Vel  | **Vel**ocity     | `len / tim`   | `/vɛl/`        | `0.029 m/s`   |
+| Ler  | Acce**ler**ation | `len / tim^2` | `/lɚ/`         | `0.005 m/s^2` |
+| Vol  | **Vol**ume       | `len^3`       | `/vɑl/`        | `0.004 m^3`   |
+| Ary  | **Are**a         | `len^2`       | `/ɛri/ `       | `0.025 m^2`   |
+| Pul  | Force            | `maz * ler`   | `/pʊl/`        | `0.01 N`      |
+| Tum  | Momen**tum**     | `maz * vel`   | `/tʌm/`        | `0.07 kg m/s` |
+
+### Notes
+
+1 rahngvel (`10^10` vel) is exactly equal to the speed of light. This is a convenient non-coincidence (it's a property of the Planck units) that is much more memorable than "`2.998x10^8` meters per second".
+
+My suggested pronounciation for ler is `/lɚ/`. This is the natural pronounciation for most American English speakers (including me) that aligns with how we pronounce "acce**ler**ation", but it contains a [rhotic schwa](https://en.wikipedia.org/wiki/R-colored_vowel), which can be difficult to pronounce if you speak almost any language/dialect other than American English or Mandarin Chinese. If you're part of the 80% of humanity that doesn't use rhotic schwas, I suggest pronouncing ler as `/lɛr/` (rhymes with air).
+
+The reason that ary ends in "y" instead of "e" is because that would conflict orthographically with "are" (the extremely common verb) and make its pronounciation less obvious.
+
+The reason that pul isn't named "for" (truncated from "**for**ce") is because that would conflict orthographically with "for" (the extremely common English preposition) and conflict phonetically with "4" (the number). Instead, I named the force unit after the word "pull" (a generic type of force). It's not perfect, but it was better than the alternatives.
+
+### Vernacular Multiples
+
+Some of these derived units are inconveniently small. For example, 1 vel is glacially slow: [approximately](https://www.wolframalpha.com/input?i=10%5E34+planck+lengths%2F+%2810%5E44+planck+times%29+in+mph) 0.067 miles per hour.
+
+In cases like these, a convenient supermultiple should be used in common vernacular instead of the base unit, similar to how kilograms are used for most measurements instead of using grams directly. For example, rather than saying "cheetahs can run at 968 vel", you would say "cheetahs can run at 9.7 hectovel".
+
+Of course, it would be great if the base units were human-scale, but they don't naturally work out that way and it's not worth losing the ease of 1:1 dimensionality conversions by using arbitrary conversion ratios.
+
+Note that almost all vernacular multiples have either the same amount of syllables or less compared to their metric or customary counterparts; "hectovel" is three syllables, which is the same as "miles per hour" and shorter than both "meters per second" and "kilometers per hour".
