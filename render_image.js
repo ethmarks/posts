@@ -1,4 +1,4 @@
-import { getImageInfo } from "jsr:@retraigo/image-size";
+import { imageSize } from "npm:image-size";
 
 /**
  * Custom markdown-it rendering rule for images that supports:
@@ -43,7 +43,7 @@ export function imageRule(
   let width, height;
   if (isImgSizeProcessable) {
     const imgData = Deno.readFileSync(src.replace(/^\//, ""));
-    const info = getImageInfo(imgData);
+    const info = imageSize(imgData);
     width = info.width;
     height = info.height;
   }
