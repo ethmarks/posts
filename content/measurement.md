@@ -106,7 +106,7 @@ There is no escape from the second, and there never will be.
 
 I have an idea for a measurement and timekeeping system that uses neither caesium seconds nor natural seconds.
 
-I call it the **Marks system**. It's an eponym based on my last name, but I think that it sounds fittingly generic for a measurement system.
+I call it the **Marks system**. It's an eponym based on my last name, but I think that it sounds fittingly generic.
 
 ### Disclaimer/Foreword
 
@@ -398,8 +398,20 @@ One of the convenient properties of Planck units is that, by definition, the spe
 
 Some of these derived units are inconveniently small. For example, 1 vel is glacially slow: [approximately](https://www.wolframalpha.com/input?i=10%5E34+planck+lengths%2F+%2810%5E44+planck+times%29+in+mph) 0.067 miles per hour.
 
-In cases like these, a convenient supermultiple should be used in common vernacular instead of the base unit, similar to how kilograms are used for most measurements instead of using grams directly. For example, rather than saying "cheetahs can run at 970 vel", you would say "cheetahs can run at 9.7 hectovel".
+In cases like these, a convenient supermultiple should be used in common vernacular instead of the base unit, similar to how kilograms are used for most measurements instead of using grams directly. For example, rather than saying "cheetahs can run at 970 vels", you would say "cheetahs can run at 9.7 hectovels".
 
 Of course, it would be great if the base units were human-scale, but they don't naturally work out that way and it's not worth losing the ease of 1:1 unit coherence by using arbitrary conversion ratios.
 
 Note that many vernacular multiples have either the same number of syllables or fewer compared to their metric or customary counterparts, so they aren't harder to say. For example, "hectovel" is three syllables, which is the same as "miles per hour" and shorter than both "meters per second" and "kilometers per hour". Likewise, "kilovol" is three syllables, which is the same as "cubic feet" and shorter than "cubic meters".
+
+## Temperature?
+
+The Marks system doesn't have a unit for temperature. This is for several reasons.
+
+Firstly, none of the big three existing temperature systems (Celsius, Fahrenheit, and Kelvin) are defined in terms of seconds. The point of the Marks system is to provide Planck-based alternatives for the systems that depend on seconds. Temperature systems don't depend on seconds, so they don't need alternatives.
+
+Secondly, temperature isn't technically a true dimensionality. Temperature is just an expression of energy (via the Boltzmann constant), which there's already a Marks unit for: ner. If you really insist on using Marks units for temperature, you can. For example, 100°C is [approximately](https://www.wolframalpha.com/input?i=%28Boltzmann+constant+*+100+degrees+Celsius+in+joules%29+%2F+%2810%5E8+Planck+masses+*+%2810%5E34+Planck+lengths%29%5E2+%2F+%2810%5E44+Planck+times%29%5E2%29) 2.6 attoner. If I created a new temperature unit, I would be repackaging an existing dimensionality in an arbitrary new unit with an arbitrary scale and an arbitrary name, which goes against the goals of the Marks system.
+
+Thirdly, in order to make a convenient temperature system (i.e. one that isn't zeroed at absolute zero), I would have to choose an arbitrary offset point to set as 0°. Even if I tried to be scientific and base it off of the properties of something (like how Celsius sets 0° as the freezing point of pure water), the substance and phase boundary that I would choose would still be arbitrary.
+
+I think it's better to just use the existing temperature systems rather than inventing a Marks system temperature system just for the sake of having one.
