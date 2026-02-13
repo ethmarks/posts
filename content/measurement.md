@@ -415,3 +415,45 @@ Secondly, temperature isn't technically a true dimensionality. Temperature is ju
 Thirdly, in order to make a convenient temperature system (i.e. one that isn't zeroed at absolute zero), I would have to choose an arbitrary offset point to set as 0°. Even if I tried to be scientific and base it off of the properties of something (like how Celsius sets 0° as the freezing point of pure water), the substance and phase boundary that I would choose would still be arbitrary.
 
 I think it's better to just use the existing temperature systems rather than inventing a Marks system temperature system just for the sake of having one.
+
+## Tim Universal Time
+
+**Tim Universal Time** (TUT) is a tim-based absolute timekeeping system. It's the Marks system's answer to both UTC and Unix time. It's pronounced `/tʌt/`.
+
+### Definition
+
+TUT is very simple: it's just a single integer that increments at a rate of 1 tim per tim. No leap seconds, no time zones, no daylight saving, none of that. Just a simple counter.
+
+### For Humans
+
+As I write this, 3,663,603 seconds have elapsed since the start of 2026. That almost certainly doesn't mean anything to you, because no reasonable person expresses dates in terms of seconds. Instead, we list each unit individually: "February 12, 9:40:04 PM".
+
+But because tims use base-10, the decimal expression isn't any less readable than if you listed each unit: "679,500 tims" vs "6 lakhtims, 7 myriatims, 9 kilotims, and 5 hectotims".
+
+This means that you don't need to convert the TUT integer into a special human-readable format; you can just display the integer and people can read it because each digit corresponds to a known unit.
+
+Depending on when you set TUT zero (more on that later), modern TUT values might have a lot of digits. The good news is that, for the average clock, you don't need to display every digit. If you only display 4 digits, you can express up to 9,999 tims (approximately 0.62 days) before it overflows and resets. This is basically just the TUT equivalent of a 12-hour wall clock.
+
+### For Computers
+
+The concept of "a simple integer counter to store the current time" has already been tested by Unix time: a 70s-era timekeeping system for computers that's still very widely used today. Unix time is a 32-bit integer that increments by one second per caesium second. That "32-bit integer" part is a bit of computing jargon that basically means that it can only go up to 2,147,483,647 seconds, or 68 years. More on this later.
+
+TUT uses signed 64-bit integers, which allows it to count both up and down by about 9 quintillion tims, which is [approximately](https://www.wolframalpha.com/input?i=%28%282%5E63%29+-+1%29+*+%2810%5E44+planck+times%29+in+ages+of+the+universe) 114 times the current age of the universe.
+
+### TUT Zero
+
+Now we're faced with the difficult question of deciding when "000000... TUT" is.
+
+The non-arbitrary choice is setting TUT zero at beginning of the universe. The advantage of this choice is that it eliminates the need for negatives. There's no reason anyone would ever need to express a time before the Big Bang, so TUT will always be a positive number, which is pretty convenient. The disadvantage of this choice is that it's not possible. We only know when the Big Bang occurred to about 117 teratims (20 million years) of precision. In order to get a truly accurate value for TUT zero, we would need to know it down to the individual tim. It doesn't seem particularly likely that cosmology will suddenly advance 16 orders of magnitude in precision in the near future, so we can consider this not a viable option.
+
+We could reference the Common Era (aka Anno Domini) calendar system that most of the world uses, setting TUT zero at the moment between 1 BCE and 1 CE. This would be the conventional choice.
+
+Another viable option is using the [Holocene calendar](https://en.wikipedia.org/wiki/Holocene_calendar)'s choice of a year zero: the approximate start of the Neolithic Revolution when early humans first discovered agriculture.
+
+Since we'll have to deal with negative TUT values regardless, we could also set TUT zero at a milestone in the recent past. The sky's the limit here. A few suggestions:
+
+- the moment that the Wright Flyer first flew at Kitty Hawk
+- the moment that Neil Armstrong first set foot on the moon
+- the moment that the first message was broadcast over the internet (it was over ARPANET, technically; [the message](https://www.icann.org/en/blogs/details/the-first-message-transmission-29-10-2019-en) was "lo")
+
+I don't personally have any strong preference for what TUT zero should be. It should be set as whichever single moment in history is collectively decided to be the most important.
