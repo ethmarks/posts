@@ -235,7 +235,7 @@ In this scenario, I think that tims would be feel like a natural, convenient sca
 
 And if you need a less coarse unit of time than the tim, the decitim is quite convenient. It's even more precise than the second without being overly precise like the millisecond.
 
-And besides, you'll see later why the fact that tims are different from seconds by such a huge amount is actually one of the greatest strengths of the Marks system.
+And besides, you'll see later why the fact that tims are different from seconds by such a significant amount is actually one of the greatest strengths of the Marks system.
 
 ### Doesn't this conflict with the name "Tim"?
 
@@ -457,3 +457,84 @@ Since we'll have to deal with negative TUT values regardless, we could also set 
 - the moment that the first message was broadcast over the internet (it was over ARPANET, technically; [the message](https://www.icann.org/en/blogs/details/the-first-message-transmission-29-10-2019-en) was "lo")
 
 I don't personally have any strong preference for what TUT zero should be. It should be set as whichever single moment in history is collectively decided to be the most important.
+
+## Sundial Time
+
+The problem with TUT is that it doesn't synchronize with the Earth's rotation or its orbit. This is genuinely important for sleep schedules, farming, and many, many other things. Simply not having an Earth-tracking time system is unacceptable.
+
+So I propose **sundial time**. This system is similar to natural seconds: the length of the units is slightly different each day because the Earth's rotation isn't constant.
+
+There are no leap seconds because there are no errors to correct; it stays in sync by definition. However, there _are_ time zones. Kind of. Sundial time is localized, meaning that it varies based on your location. Even though different places in the world experience noon at different times, noon always occurs at the same time every day in Sundial time.
+
+### Etymology
+
+The reason it's called "Sundial time" is because this Earth-tracking system is exactly how timekeeping worked for millennia using sundials.
+
+The only reason people started caring about what time it was in other places was because of trains. With the invention of the locomotive, people could travel fast enough that they could effectively race the Earth's rotation. You could depart at noon, spend 6 hours traveling at 60 miles per hour, and find that your sundial read 5:33 when you arrived. This is because sundials express the position of the Sun in the sky, which varies by location. When you moved to the new location, you effectively shifted the sundial by 27 minutes.
+
+This was very confusing for people at the time, so they created [Railway time](https://en.wikipedia.org/wiki/Railway_time), a synchronized standard time system that was the same everywhere in the world. It was basically the precursor to UTC, and accordingly is the root of all UTC-related evil.
+
+But now that we have TUT for the use cases that require universal timekeeping, we can use Sundial time for use cases that require Earth-tracking timekeeping.
+
+### Technical Implementation
+
+Sundial time can be determined using dedicated computer programs which, in a Marks-system-using future, every smart device would come preinstalled with. These programs can calculate the Sundial time for a given location at a given point in time, either in the past or future based on historical or extrapolated data.
+
+You can also use a literal physical sundial. Seriously. The concepts are the same.
+
+### "But I don't want units to vary in length"
+
+Then use tims/TUT. Earth's rotation and its orbit vary in length, so their derived units must too. The only reason that UTC manages to have an Earth-tracking time system with stable units is because of its nightmarish complexity.
+
+### Specification
+
+I don't have a firm specification for Sundial time. As long as it's Earth-tracking and doesn't use seconds, it fits the bill. Sundial time is already very arbitrary because it uses Earth's orbit rather any fundamental constants, so it's much more important to optimize for convenience than for non-arbitrariness. I leave designing the precise specification as an exercise to the reader.
+
+...That being said, I do have a few hints/suggestions.
+
+Firstly, I suggest using **dal** as the unit of Sundial time, pronounced `/dɑːl/`, like "doll" or like "dial" (from "sun**dial**") with a strong Southern twang.
+
+Secondly, I suggest that 1 dal should be equal to `1/90,720` of a day. This is [approximately](https://www.wolframalpha.com/input?i=%28mean+solar+day+%2F+90%2C720%29+%2F+%2810%5E44+planck+times+%2F+10%29) 1.7665 decitims (0.95 caesium seconds). I selected 90,720 because it's extremely divisible; it has [120 divisors](https://www.wolframalpha.com/input?i=divisors+of+90%2C720) (compared to 86,400's mere [96 divisors](https://www.wolframalpha.com/input?i=divisors+of+86%2C400)), plus it's evenly divisible by 7.
+
+## You can stop suspending your disbelief now
+
+That's right, let it all out.
+
+**"This would break 8 billion people's unit intuitions. The lost productivity of people having to relearn basic measurements would surely amount to trillions of dollars at minimum"** \
+Yes, that's a good point. It'd certainly be a very rough transition period.
+
+**"Re-manufacturing literally everything would not only be unimaginably expensive but it would also massively accelerate climate change by causing a huge spike in resource consumption"** \
+Yeah, that part would be pretty bad. I guess theoretically we could only update the specifications and leave the physical items intact, but that'd still be a monumental task and then every length, weight, speed, et cetera would have weird, uneven, and oddly precise values.
+
+**"This is just contrarianism and a solution in search of a problem"** \
+Ah, but that's where you're wrong. The Marks system actually solves a very real problem. Read on to the next section.
+
+## The Epochalypse
+
+Remember how I said that Unix time can only go up to a certain number of seconds (approximately 68 years)? This is called the Unix epoch. After `2^31` seconds have passed after 1970, we'll enter a new Unix epoch, causing Unix time to roll back to zero. This'll happen on January 19, 2038.
+
+This is called the [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem). It's similar in concept to the Y2K bug, where every computer that stored the current year as a 2-digit number suddenly thought that it had gone from December 31, 1999 to January 1, 1900.
+
+The main difference between then and now is that there are a lot more computers nowadays than there were in 1999. Like, a **lot** more, and we depend on them much more heavily.
+
+The vast majority of modern computers use 64-bit Unix time, which won't run out for nearly 300 billion years, and even among the systems that do use 32-bit Unix time, many have robust error handling and will realize that something is amiss and won't actually think that it's 1970.
+
+But some of the most critical systems in the world _don't_ use modern computers. The IRS and 92 of the top 100 global banks still primarily use mainframe computers from the 1960s. Their codebases contain many tens of millions of lines of code, most of it written in COBOL, which is a programming language where most of the people that knew it have retired and/or died.
+
+Verifying that a system is actually safe from the 2038 problem is extremely difficult. Even if a system always stores time in 64 bits, if it converts that time into 32 bits even once for an intermediate step, the whole system is now vulnerable. Normally, programmers write tests for this kind of stuff. But tests don't work on the 2038 problem because the system will always give the right answer until it suddenly doesn't, and by then it's too late. The only option is to read every single line of code and make sure that it doesn't use 32-bit time even once.
+
+The thing about the 2038 problem is that all it takes is one critical system, just one missed intermediate step that briefly uses 32-bit arithmetic.
+
+### Tims to the rescue
+
+This is where tims come in.
+
+Because TUT was never 32-bit, you can be sure that any system using TUT is 64-bit, and therefore is safe from the 2038 problem. So just by looking at a program and seeing which units it uses, you can determine if it is "possibly safe or possibly vulnerable and I have to read several million lines of code to be sure" or "definitely safe".
+
+Because tims are significantly larger than seconds, it's extremely easy to tell if you mix them up. Rather than having to carefully read over each line of code, you can just check if the program's output is off by a factor of over 5.
+
+Tims allow you to empirically test for 2038 safety, which is _much_ easier than analytically verifying it by reading line-by-line.
+
+Unix time's technical debt, the fintech industry's willingness to maintain 60-year-old mainframes, the shortage of people who can properly audit COBOL code, and the catastrophic stakes have combined to create a scenario in which switching to an entirely new measurement system is genuinely almost practical. 
+
+Tims make it much easier to ensure that the 2038 problem doesn't collapse the infrastructure that powers the entire modern world. The rest of the Marks system is really just a "while we're at it" kind of thing.
