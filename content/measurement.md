@@ -20,7 +20,7 @@ The natural second has an exact-valued relationship with the length of the day (
 
 Both the SI (metric) system and the customary (U.S.) system define _all_ of their units in terms of the second, one way or another. The SI meter is defined as "the distance that light travels in a vacuum during `1/299,792,458` of a second". If you didn't know how long a "second" is, you also wouldn't know how long a meter is, so the definition of a meter relies on the definition of a second.
 
-Even units that aren't directly defined via seconds can still be reliant on it. For example, the customary foot is defined as _exactly_ `0.3048` meters, so because it's based on meters and meters are based on seconds, the customary foot is ultimately based on seconds. Likewise, because the SI kilogram is defined in terms of the speed of light, the Planck constant, and the SI meter, it too is based on seconds. The customary pound is defined as exactly `0.45359237` kilograms, so it relies on kilograms which rely on meters which rely on seconds. _Every_ unit ultimately relies on the second. Because of this, it's absolutely critical that we know **exactly** how long a second is.
+Even units that aren't directly defined via seconds can still be reliant on it. For example, the customary foot is defined as exactly `0.3048` meters, so because it's based on meters and meters are based on seconds, the customary foot is ultimately based on seconds. Likewise, because the SI kilogram is defined in terms of the speed of light, the Planck constant, and the SI meter, it too is based on seconds. The customary pound is defined as exactly `0.45359237` kilograms, so it relies on kilograms which rely on meters which rely on seconds. _Every_ unit ultimately relies on the second. Because of this, it's absolutely critical that we know **exactly** how long a second is.
 
 The natural second is not good enough for this. The natural second is defined in terms of the length of the day, and the length of the day changes a tiny, tiny amount every day (mainly due to the Moon's gravitational pull gradually slowing Earth's rotation over the course of millions of years). Because of this, the definition of a natural second is ever so slightly different every day. This is obviously unacceptable; nobody wants to update yardsticks because the definition of a foot changed.
 
@@ -476,15 +476,15 @@ This was very confusing for people at the time, so they created [Railway time](h
 
 But now that we have TUT for the use cases that require universal timekeeping, we can use Sundial time for use cases that require Earth-tracking timekeeping.
 
+### Variable-length units
+
+I know that having Sundial time be intentionally unstable sounds ridiculous. However, this is just a natural consequence of having an Earth-tracking time system. Earth's rotation and its orbit vary in length, so their derived units must vary too. The only reason that UTC manages to have an Earth-tracking time system with stable units is because of its nightmarish complexity.
+
 ### Technical Implementation
 
 Sundial time can be determined using dedicated computer programs which, in a Marks-system-using future, every smart device would come preinstalled with. These programs can calculate the Sundial time for a given location at a given point in time, either in the past or future based on historical or extrapolated data.
 
 You can also use a literal physical sundial. Seriously. The concepts are the same.
-
-### "But I don't want units to vary in length"
-
-Then use tims/TUT. Earth's rotation and its orbit vary in length, so their derived units must too. The only reason that UTC manages to have an Earth-tracking time system with stable units is because of its nightmarish complexity.
 
 ### Specification
 
@@ -496,45 +496,65 @@ Firstly, I suggest using **dal** as the unit of Sundial time, pronounced `/dɑː
 
 Secondly, I suggest that 1 dal should be equal to `1/90,720` of a day. This is [approximately](https://www.wolframalpha.com/input?i=%28mean+solar+day+%2F+90%2C720%29+%2F+%2810%5E44+planck+times+%2F+10%29) 1.7665 decitims (0.95 caesium seconds). I selected 90,720 because it's extremely divisible; it has [120 divisors](https://www.wolframalpha.com/input?i=divisors+of+90%2C720) (compared to 86,400's mere [96 divisors](https://www.wolframalpha.com/input?i=divisors+of+86%2C400)), plus it's evenly divisible by 7.
 
+## Corollaries
+
+In case it wasn't obvious from the rest of this post, I'm very interested physics. It's an enjoyable field of study for me, which makes it frustrating how many ridiculous conventions there are.
+
+For example, when Benjamin Franklin was first studying electricity, he guessed that charges flowed from positive to negative. He was wrong; electrons (negative) are free-moving and flow towards protons (positive), which are fixed. But by the time we realized this mistake, Benjamin Franklin had been dead for 107 years and his incorrect notation had worked its way into several million textbooks, making it effectively impossible to amend. So even to this day, physics uses two contradictory, overlapping, and exactly opposite conventions for charge flow.
+
+I know about several other conventions like this in physics or physics-adjacent fields.
+
+- **Thermodynamics**: engineers describe work done _by_ a system as positive and work done _on_ a system as negative, which is exactly the opposite of how every other branch of physics describe work.
+- **Organic chemistry**: the Glyceraldehyde Reference describes D sugars as rotating to the right and L sugars as rotating to the left, even though both can rotate in either direction.
+- **Geology**: we describe Earth's North Magnetic Pole as being positive and causing magnetic field lines, even though it's actually negative (which is why positive compass needles are attracted to it) and is actually where magnetic field lines sink into the ground.
+- **Astronomy**: we use "magnitude" to describe the brightness of stars, but it goes in the opposite direction of the actual brightness. For example, Proxima Centauri (a red dwarf star) has a magnitude of 11.13 while Rigel (a blue hypergiant star) has a magnitude of 0.13. Also, rather than being a linear or even a base-10 logarithmic scale, magnitude scales by the fifth root of 100 (approximately 2.512). [I'm not making this up](https://en.wikipedia.org/wiki/Apparent_magnitude#:~:text=2.512).
+
+I assume that there are more confusing conventions like this in physics that I don't know about, and that there are even more conventions in other fields. Maybe there's a painting convention that describes blue paint as "redish" or something.
+
+We can fix all of this.
+
+In order to switch to the Marks system, we'd have to rewrite pretty much every textbook at around the same time. Suspending our disbelief about the practicalities of this for a moment, this gives us a golden opportunity to fix all of the silly and confusing conventions. We couldn't do this before because nobody was willing to rewrite everything. If rewriting everything is on the table, we might as well fix stuff while we're at it.
+
 ## You can stop suspending your disbelief now
 
-That's right, let it all out.
-
-**"This would break 8 billion people's unit intuitions. The lost productivity of people having to relearn basic measurements would surely amount to trillions of dollars at minimum"** \
+**"This would break 8 billion people's unit intuitions. The lost productivity of people having to relearn basic measurements would surely amount to trillions of dollars at minimum."** \
 Yes, that's a good point. It'd certainly be a very rough transition period.
 
-**"Re-manufacturing literally everything would not only be unimaginably expensive but it would also massively accelerate climate change by causing a huge spike in resource consumption"** \
+**"Re-manufacturing everything would not only be unimaginably expensive but it would also massively accelerate climate change by causing a huge spike in resource consumption."** \
 Yeah, that part would be pretty bad. I guess theoretically we could only update the specifications and leave the physical items intact, but that'd still be a monumental task and then every length, weight, speed, et cetera would have weird, uneven, and oddly precise values.
 
-**"This is just contrarianism and a solution in search of a problem"** \
+**The U.S. still hasn't adopted the metric system, and the Marks system would an even bigger change. Even if most of the world adopted the Marks system, there would almost certainly be a few holdouts. Rather than having two conflicting measurement systems, we'd have three.** \
+Another good point. If we're being realistic, even if we somehow managed to get the world to run on tims and TUT behind the scenes, most normal people would probably refuse to switch away from existing measurement systems.
+
+**"This is just contrarianism and a solution in search of a problem."** \
 Ah, but that's where you're wrong. The Marks system actually solves a very real problem. Read on to the next section.
 
 ## The Epochalypse
 
 Remember how I said that Unix time can only go up to a certain number of seconds (approximately 68 years)? This is called the Unix epoch. After `2^31` seconds have passed after 1970, we'll enter a new Unix epoch, causing Unix time to roll back to zero. This'll happen on January 19, 2038.
 
-This is called the [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem). It's similar in concept to the Y2K bug, where every computer that stored the current year as a 2-digit number suddenly thought that it had gone from December 31, 1999 to January 1, 1900.
+This is called the [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem). It's similar in concept to the Y2K bug, where every computer that stored the current year as a 2-digit number beleived that time had advanced from December 31, 1999 to January 1, 1900.
 
-The main difference between then and now is that there are a lot more computers nowadays than there were in 1999. Like, a **lot** more, and we depend on them much more heavily.
+The main difference between then and now is that there are a lot more computers nowadays than there were in 1999. Like, a **lot** more, and we depend on them far more heavily.
 
-The vast majority of modern computers use 64-bit Unix time, which won't run out for nearly 300 billion years, and even among the systems that do use 32-bit Unix time, many have robust error handling and will realize that something is amiss and won't actually think that it's 1970.
+The vast majority of modern computers use 64-bit Unix time, which won't run out for nearly 300 billion years. Even among the systems that do use 32-bit Unix time, many have robust error handling and will realize that something is amiss and won't actually think that it's 1970.
 
-But some of the most critical systems in the world _don't_ use modern computers. The IRS and 92 of the top 100 global banks still primarily use mainframe computers from the 1960s. Their codebases contain many tens of millions of lines of code, most of it written in COBOL, which is a programming language where most of the people that knew it have retired and/or died.
+But some of the most critical systems in the world _don't_ use modern computers, and many weren't designed to handle. The IRS and 92 of the top 100 global banks still primarily use mainframe computers from the 1960s. Their codebases contain many tens of millions of lines of code, most of it written in COBOL, which is a programming language where most of the people that knew it have retired and/or died.
 
 Verifying that a system is actually safe from the 2038 problem is extremely difficult. Even if a system always stores time in 64 bits, if it converts that time into 32 bits even once for an intermediate step, the whole system is now vulnerable. Normally, programmers write tests for this kind of stuff. But tests don't work on the 2038 problem because the system will always give the right answer until it suddenly doesn't, and by then it's too late. The only option is to read every single line of code and make sure that it doesn't use 32-bit time even once.
 
-The thing about the 2038 problem is that all it takes is one critical system, just one missed intermediate step that briefly uses 32-bit arithmetic.
+The thing about the 2038 problem is that all it takes is one critical system, just one missed intermediate step that briefly uses 32-bit arithmetic, to cause it all to come crashing down.
 
-### Tims to the rescue
+### Incompatibility as a feature
 
-This is where tims come in.
+This is where the Marks system comes in.
 
 Because TUT was never 32-bit, you can be sure that any system using TUT is 64-bit, and therefore is safe from the 2038 problem. So just by looking at a program and seeing which units it uses, you can determine if it is "possibly safe or possibly vulnerable and I have to read several million lines of code to be sure" or "definitely safe".
 
-Because tims are significantly larger than seconds, it's extremely easy to tell if you mix them up. Rather than having to carefully read over each line of code, you can just check if the program's output is off by a factor of over 5.
+There's one big reason why rewriting systems to use tims might be genuinely easier than auditing every line of code: it lets you to use empirical tests.
 
-Tims allow you to empirically test for 2038 safety, which is _much_ easier than analytically verifying it by reading line-by-line.
+Accidentally using 32-bit seconds when you meant to use 64-bit seconds will still get you the right answer every time when try to run the code, so it's invisible to normal tests. There are specialized tests designed to catch 2038 bugs by setting the system clock to a date in the future, but they doesn't encapsulate interactions with other servers and can still miss particularly subtle bugs. The fact that code runs successfully isn't an indicator of whether or not it's vulnerable to 2038. The only way to be sure is to carefully inspect every single line using expensive, slow, and mistake-prone humans.
 
-Unix time's technical debt, the fintech industry's willingness to maintain 60-year-old mainframes, the shortage of people who can properly audit COBOL code, and the catastrophic stakes have combined to create a scenario in which switching to an entirely new measurement system is genuinely almost practical. 
+In contrast, accidentally using seconds when you meant to use tims will cause the code to either fail outright or give an answer that's wrong by a factor of more than 5, which you can easily test for. If tim-using code runs sucessfully, you know that it's definitely safe from 2038. If it fails, you know that there's definitely a problem with the code and you can fix it before it becomes a global problem. Rather than manually auditing tens of millions of lines of code, you can just... run the code.
 
-Tims make it much easier to ensure that the 2038 problem doesn't collapse the infrastructure that powers the entire modern world. The rest of the Marks system is really just a "while we're at it" kind of thing.
+Tims fill a specific niche created by Unix time's technical debt, the fintech industry's willingness to maintain 60-year-old mainframes, and the shortage of people who can properly audit COBOL code. Tims aren't the only solution (nor are they necessarily the best one) but they are a genuinely viable solution, and I think that the Marks system would be a substantial improvement over our current measurement and timekeeping systems.
