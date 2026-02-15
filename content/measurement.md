@@ -243,7 +243,7 @@ That's actually the **second** time I've heard that objection. It's actually a p
 
 ## Len
 
-![A statue of Vladimir Lenin with the text 'There are some who call me Len'](/media/somewhocallmelen.webp)
+![An image of Lenny Leonard from The Simpsons with the text 'There are some who call me Len'](/media/somewhocallmelen.webp)
 
 The **len** is the fundamental unit of length for the Marks system. It's pronounced `/lɛn/` (exactly like how it looks).
 
