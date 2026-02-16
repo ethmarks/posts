@@ -1,6 +1,6 @@
 ---
 title: A new measurement system
-published: 2026-02-09
+published: 2026-02-16
 desc: There are two different definitions of a "second", the one you learned and the one that every scientist, computer, and yardstick uses. The two definitions are fundamentally incompatible and have so much technical debt that humanity would be better off starting afresh.
 ---
 
@@ -60,13 +60,15 @@ Leap seconds are a confusing, inconsistent mess that should be abolished.
 
 ![Map of current de facto time zones ](/media/timezones.webp "Time zones of the world")
 
-The image above is a map of UTC's time zones. Each zone represents a different offset from UTC (which is "zeroed" on the Greenwich Royal Observatory in England). Without time zones, noon would occur at different times throughout the world, which would violate UTC's goals. So it offsets the time to try to make noon occur as close to 12:00 as possible all around the world.
+The image above is a map of UTC's time zones. Each zone represents a different offset from UTC (which is "zeroed" on the Greenwich Royal Observatory in England). Because "noon" is based the position of the sun, which varies by longitude, different longitudes experience noon at different times. Without time zones, noon would occur at different times throughout the world, which would violate UTC's goals. So UTC offsets the time by discrete increments depending on where you are on Earth.
 
-Ideally, time zones would be parallel rectangular ribbons. But in reality, they contour to geographical and geopolitical borders for political reasons, which results in the wacky and uneven zones that you see above.
+The whole purpose of time zones is to correct for the sun's position varying by longitude, so time zones should be based entirely on longitude. They should be straight, parallel ribbons. In reality, time zones contour to geographical and geopolitical borders for political reasons, which results in the wacky and uneven zones that you see above.
 
-Most time zones are offset from UTC by a positive or negative whole number of hours, but even this broad statement has a few asterisks. Examples include Indian Standard Time being 5 hours and 30 minutes offset and Nepal Standard Time being 5 hours and 45 minutes offset.
+Most time zones are offset from UTC by a positive or negative whole number of hours, but even this broad statement has a few asterisks. Examples include Indian Standard Time, which is 5 hours and 30 minutes offset, and Nepal Standard Time, which is 5 hours and 45 minutes offset.
 
-Because of time zones, "2:00" could mean _literally_ any hour depending on where you are relative to where it was said.
+Because of time zones, a contextless hour (e.g. "2:00") conveys _literally_ zero meaning about what hour it's referring to globally. The whole point of saying "2:00" is to refer to a specific hour, but it's meaningless without also including a time zone.
+
+Even if time zone ribbons were geometrically perfect, they would still have a fundamental flaw: they're ribbons. Most time zones are `1/24` of the circumference of the planet in width, so the sun's position varies by an entire hour across a single time zone. Rather than being global/stable or being fully Earth-tracking, time zones are a weird half measure that have the disadvantages of both.
 
 Time zones are a confusing, inconsistent mess that should be abolished.
 
@@ -86,15 +88,13 @@ As much as I pick on UTC, it accomplishes its stated goals admirably. It success
 
 But it shouldn't have to.
 
-Absolute time and relative time are fundamentally different things. Both are necessary, but they are simply not compatible. Without absolute time, it would be impossible to describe things precisely or to coordinate consistently across the globe. Without relative time, it would be impossible to describe the day/night cycle consistently and people would go insane from sleep deprivation as their circiadian rhythms drifted out of sync. However, it simply doesn't make sense to use the same time unit for both absolute and relative time. They are different and should have different units with different names that are substantially different in value so that people don't conflate them.
+Uniform time and Earth-tracking time are fundamentally different things. Both are necessary, but they are simply not compatible. Without stable time, it would be impossible to describe things precisely or to coordinate consistently across the globe. Without Earth-tracking time, it would be impossible to describe the day/night cycle consistently and people would go insane from sleep deprivation as their circiadian rhythms drifted out of sync. However, it simply doesn't make sense to use the same time unit for both Uniform and Earth-tracking time. They are different and should have different units with different names that are substantially different in value so that people don't conflate them.
 
 Using a natural second when you meant to use a caesium second is objectively wrong and results in inconsistent behavior that causes real problems down the line. Had you accidentally used an hour instead of a second, you would instantly notice your mistake because the output would be immediately wrong by a factor of nearly four thousand. But because mixing up seconds is only wrong by two millionths of a percent, it's very difficult to catch these kinds of mistakes until the errors have compounded over years.
 
 The only reason that seconds continue to be universally used is cultural inertia, and seconds have a **lot** of cultural inertia. With the possible exception of base-10 mathematics, I can't think of any other system that is more deeply rooted into modern human civilization. _Everything_ depends on the second.
 
-Every server on the internet uses UTC timekeeping, every textbook and novel uses seconds to describe elapsed time, and every clock has a separate hand for hours, minutes, and seconds.
-
-The second unites languages and cultures and measurement systems. Both metric and customary are defined in terms of seconds, which means that almost every manmade physical object manufactured in the last 200 years was built to a specification that used measurements that are based on the caesium second. All across the world, every road sign, milk jug, screw, skyscraper, and everything else relies on seconds.
+The second unites languages and cultures and measurement systems. Every server on the internet uses UTC timekeeping, every textbook and novel uses seconds to describe elapsed time, and every clock has a separate hand for hours, minutes, and seconds. Both metric and customary are defined in terms of seconds, which means that almost every manmade physical object manufactured in the last 200 years was built to a specification that used measurements that are based on the caesium second. All across the world, every road sign, milk jug, screw, skyscraper, and everything else relies on seconds.
 
 Even if we had a better time unit, retrofitting _all technology_ to the new standard would be an undertaking of such incomprehensible scale that it would make the Apollo Program look like a weekend Lego set.
 
@@ -110,7 +110,7 @@ I call it the **Marks system**. It's an eponym based on my last name, but I thin
 
 ### Disclaimer/Foreword
 
-Firstly, even though I believe that the Marks system is genuinely better than our current second-based systems, I'm realistic about my system's chances of being adopted. This is not a naive, pie-in-the-sky manifesto, and I realize how difficult it would be to adopt my system in practice. However, please try to suspend your disbelief about implementation feasibility.
+Firstly, even though I believe that the Marks system is genuinely better than our current second-based systems, I'm realistic about its chances of being adopted. This is not a naive, pie-in-the-sky manifesto. I realize how difficult it would be to adopt my system in practice. However, please try to suspend your disbelief about implementation feasibility.
 
 Secondly, the terms and magnitudes that I use are just suggestions. The Marks system is more of a concept than an actual specification. The terms have plenty of wiggle room and are not set in stone; I changed my mind about a few of them in the process of writing this post. So if you object to something about the Marks system, please try to distinguish whether you're objecting to the core concepts or just the naming conventions.
 
@@ -120,7 +120,7 @@ Secondly, the terms and magnitudes that I use are just suggestions. The Marks sy
 >
 > -- [Alexander McKechnie](https://youtu.be/EH-z9gE2uGY?t=147) (@exurb1a)
 
-Almost all measurement systems are based off of human convenience. For example, caesium seconds are based on the properties of caesium-133. Scientists could have chosen to base the second off of any other atom's hyperfine transition frequency (although caesium-133 is cheap and very stable, which makes it convenient, which is why they chose it), so they choice of caesium-133 was arbitrary.
+Almost all measurement systems are based off of human convenience. For example, caesium seconds are based on the properties of caesium-133. Scientists could have chosen to base the second off of any other atom's hyperfine transition frequency (although caesium-133 is cheap and very stable, which makes it convenient, which is why they chose it), so the choice of caesium-133 was arbitrary.
 
 The exceptions to this are Planck units. Planck units are units that are defined exclusively using the fundamental universal properties of pure vacuum. These properties include the speed of light, the gravitational constant, and the Planck constant.
 
@@ -210,12 +210,12 @@ Here are a few common everyday durations expressed in tims.
 
 | Duration               | Tims                          |
 | ---------------------- | ----------------------------- |
-| Human eye blink        | 65 millitims                  |
 | Hummingbird wing beat  | 3 millitims                   |
-| Time to cook an egg    | 39 tims                       |
+| Human eye blink        | 65 millitims                  |
 | Average pop song       | 36 tims                       |
-| Average urban commute  | 3.3 hectotims (336 tims)      |
+| Time to cook an egg    | 39 tims                       |
 | REM sleep cycle        | 2.7 hectotims (278 tims)      |
+| Average urban commute  | 3.3 hectotims (336 tims)      |
 | Earth day              | 1.6 myriatims (16,030 tims)   |
 | Moon orbit             | 4.37 lakhtims                 |
 | Average human lifespan | 42 hebdotims                  |
@@ -231,7 +231,7 @@ Tims are considerably longer than seconds. Rather than being 1 second long (appr
 
 However, it's important to distinguish between cultural inertia and fundamental inconvenience. I believe that the reason that tims seem "wrong" is primarily inertia, which is a matter of implementation feasibility, which we agreed to suspend disbelief about. Imagine that we can magically just instantly make everyone acclimated to tims.
 
-In this scenario, I think that tims would be feel like a natural, convenient scale. This wouldn't work if I set a tim equal to like 50 seconds or something; that would always be inconvenient no matter how used to it people are. But I think that tims are within the range of human adaptability.
+In this scenario, I think that tims would be feel like a natural, convenient scale. Had I set 1 tim to equal 100 seconds or something, it would always be inconvenient even if everybody was magically used to it. There's a range of acceptable values for a base unit of time that's somewhere in between 0.1 seconds and 10 seconds, and I think that 5.4 seconds is within that range.
 
 And if you need a less coarse unit of time than the tim, the decitim is quite convenient. It's even more precise than the second without being overly precise like the millisecond.
 
@@ -272,7 +272,7 @@ Combining lens with prefixes, you get a variety of supermultiples and submultipl
 | Lahklen         | 100,000 lens   | 16 kilometers (10 miles)     |
 | Megalen         | 1,000,000 lens | 161 kilometers               |
 
-Note that 1 myrialen happens to be very similar in length to 1 customary mile.
+Note that 1 decalen is approximately the height of an average adult human, and 1 myrialen is almost exactly 1 customary mile to within 1 part per hundred.
 
 ### Examples
 
@@ -418,7 +418,7 @@ I think it's better to just use the existing temperature systems rather than inv
 
 ## Tim Universal Time
 
-**Tim Universal Time** (TUT) is a tim-based absolute timekeeping system. It's the Marks system's answer to both UTC and Unix time. It's pronounced `/tʌt/`.
+**Tim Universal Time** (TUT) is a tim-based stable timekeeping system. It's the Marks system's answer to both UTC and Unix time. It's pronounced `/tʌt/` ("tut", not "tee yoo tee").
 
 ### Definition
 
@@ -430,7 +430,7 @@ As I write this, 3,663,603 seconds have elapsed since the start of 2026. That al
 
 But because tims use base-10, the decimal expression isn't any less readable than if you listed each unit: "679,500 tims" vs "6 lakhtims, 7 myriatims, 9 kilotims, and 5 hectotims".
 
-This means that you don't need to convert the TUT integer into a special human-readable format; you can just display the integer and people can read it because each digit corresponds to a known unit.
+This means that you don't need to convert the TUT integer into a special human-readable format; you can just display the integer and people can read it because each digit corresponds to a tim multiple.
 
 Depending on when you set TUT zero (more on that later), modern TUT values might have a lot of digits. The good news is that, for the average clock, you don't need to display every digit. If you only display 4 digits, you can express up to 9,999 tims (approximately 0.62 days) before it overflows and resets. This is basically just the TUT equivalent of a 12-hour wall clock.
 
@@ -454,7 +454,7 @@ Since we'll have to deal with negative TUT values regardless, we could also set 
 
 - the moment that the Wright Flyer first flew at Kitty Hawk
 - the moment that Neil Armstrong first set foot on the moon
-- the moment that the first message was broadcast over the internet (it was over ARPANET, technically; [the message](https://www.icann.org/en/blogs/details/the-first-message-transmission-29-10-2019-en) was "lo")
+- the moment that the first message was broadcast over the internet (technically, it was over ARPANET; [the message](https://www.icann.org/en/blogs/details/the-first-message-transmission-29-10-2019-en) was "lo")
 
 I don't personally have any strong preference for what TUT zero should be. It should be set as whichever single moment in history is collectively decided to be the most important.
 
@@ -462,19 +462,19 @@ I don't personally have any strong preference for what TUT zero should be. It sh
 
 The problem with TUT is that it doesn't synchronize with the Earth's rotation or its orbit. This is genuinely important for sleep schedules, farming, and many, many other things. Simply not having an Earth-tracking time system is unacceptable.
 
-So I propose **sundial time**. This system is similar to natural seconds: the length of the units is slightly different each day because the Earth's rotation isn't constant.
+So I propose **Sundial time**. Sundial time is an Earth-tracking timekeeping system, similar to natural seconds. The length of the units is slightly different each day because the Earth's rotation isn't constant.
 
 There are no leap seconds because there are no errors to correct; it stays in sync by definition. However, there _are_ time zones. Kind of. Sundial time is localized, meaning that it varies based on your location. Even though different places in the world experience noon at different times, noon always occurs at the same time every day in Sundial time.
 
 ### Etymology
 
-The reason it's called "Sundial time" is because this Earth-tracking system is exactly how timekeeping worked for millennia using sundials.
+The reason it's called "Sundial time" is because it's almost exactly how timekeeping worked for millennia using sundials.
 
-The only reason people started caring about what time it was in other places was because of trains. With the invention of the locomotive, people could travel fast enough that they could effectively race the Earth's rotation. You could depart at noon, spend 6 hours traveling at 60 miles per hour, and find that your sundial read 5:33 when you arrived. This is because sundials express the position of the Sun in the sky, which varies by location. When you moved to the new location, you effectively shifted the sundial by 27 minutes.
+The only reason people started caring about what time it was in other places was because of trains. With the invention of the locomotive, people could travel fast enough that they could basically race the Earth's rotation. You could depart at noon, spend 6 hours traveling at 60 miles per hour, and find that your sundial read 5:33 when you arrived. This is because sundials are based on the position of the Sun in the sky, which varies by location. When you moved to the new location, you effectively shifted the sundial by 27 minutes.
 
 This was very confusing for people at the time, so they created [Railway time](https://en.wikipedia.org/wiki/Railway_time), a synchronized standard time system that was the same everywhere in the world. It was basically the precursor to UTC, and accordingly is the root of all UTC-related evil.
 
-But now that we have TUT for the use cases that require universal timekeeping, we can use Sundial time for use cases that require Earth-tracking timekeeping.
+But now that we have TUT for the use cases that require stable timekeeping, we can use Sundial time for use cases that require Earth-tracking timekeeping.
 
 ### Variable-length units
 
@@ -494,52 +494,33 @@ I don't have a firm specification for Sundial time. As long as it's Earth-tracki
 
 Firstly, I suggest using **dal** as the unit of Sundial time, pronounced `/dɑːl/`, like "doll" or like "dial" (from "sun**dial**") with a strong Southern twang.
 
-Secondly, I suggest that 1 dal should be equal to `1/90,720` of a day. This is [approximately](https://www.wolframalpha.com/input?i=%28mean+solar+day+%2F+90%2C720%29+%2F+%2810%5E44+planck+times+%2F+10%29) 1.7665 decitims (0.95 caesium seconds). I selected 90,720 because it's extremely divisible; it has [120 divisors](https://www.wolframalpha.com/input?i=divisors+of+90%2C720) (compared to 86,400's mere [96 divisors](https://www.wolframalpha.com/input?i=divisors+of+86%2C400)), plus it's evenly divisible by 7.
-
-## Corollaries
-
-In case it wasn't obvious from the rest of this post, I'm very interested physics. It's an enjoyable field of study for me, which makes it frustrating how many ridiculous conventions there are.
-
-For example, when Benjamin Franklin was first studying electricity, he guessed that charges flowed from positive to negative. He was wrong; electrons (negative) are free-moving and flow towards protons (positive), which are fixed. But by the time we realized this mistake, Benjamin Franklin had been dead for 107 years and his incorrect notation had worked its way into several million textbooks, making it effectively impossible to amend. So even to this day, physics uses two contradictory, overlapping, and exactly opposite conventions for charge flow.
-
-I know about several other conventions like this in physics or physics-adjacent fields.
-
-- **Thermodynamics**: engineers describe work done _by_ a system as positive and work done _on_ a system as negative, which is exactly the opposite of how every other branch of physics describe work.
-- **Organic chemistry**: the Glyceraldehyde Reference describes D sugars as rotating to the right and L sugars as rotating to the left, even though both can rotate in either direction.
-- **Geology**: we describe Earth's North Magnetic Pole as being positive and causing magnetic field lines, even though it's actually negative (which is why positive compass needles are attracted to it) and is actually where magnetic field lines sink into the ground.
-- **Astronomy**: we use "magnitude" to describe the brightness of stars, but it goes in the opposite direction of the actual brightness. For example, Proxima Centauri (a red dwarf star) has a magnitude of 11.13 while Rigel (a blue hypergiant star) has a magnitude of 0.13. Also, rather than being a linear or even a base-10 logarithmic scale, magnitude scales by the fifth root of 100 (approximately 2.512). [I'm not making this up](https://en.wikipedia.org/wiki/Apparent_magnitude#:~:text=2.512).
-
-I assume that there are more confusing conventions like this in physics that I don't know about, and that there are even more conventions in other fields. Maybe there's a painting convention that describes blue paint as "redish" or something.
-
-We can fix all of this.
-
-In order to switch to the Marks system, we'd have to rewrite pretty much every textbook at around the same time. Suspending our disbelief about the practicalities of this for a moment, this gives us a golden opportunity to fix all of the silly and confusing conventions. We couldn't do this before because nobody was willing to rewrite everything. If rewriting everything is on the table, we might as well fix stuff while we're at it.
+Secondly, I suggest that 1 dal should be equal to `1/90,720` of a day. This is [approximately](https://www.wolframalpha.com/input?i=%28mean+solar+day+%2F+90%2C720%29+%2F+%2810%5E44+planck+times+%2F+10%29) 1.7665 decitims (0.95 caesium seconds). I selected 90,720 because it's extremely divisible; it has [120 divisors](https://www.wolframalpha.com/input?i=divisors+of+90%2C720) (compared to 86,400's mere [96 divisors](https://www.wolframalpha.com/input?i=divisors+of+86%2C400)). It's also divisible by 7, which 86,400 is not.
 
 ## You can stop suspending your disbelief now
 
-**"This would break 8 billion people's unit intuitions. The lost productivity of people having to relearn basic measurements would surely amount to trillions of dollars at minimum."** \
-Yes, that's a good point. It'd certainly be a very rough transition period.
+**"Adopting the Marks system would break 8 billion people's unit intuitions. The lost productivity of people having to relearn basic measurements would surely amount to trillions of dollars at minimum."** \
+Yes, that's a good point. It'd certainly be a very rough transition period. Those trillions of dollars could probably be put to a better use than switching to a more elegant measurement system.
 
 **"Re-manufacturing everything would not only be unimaginably expensive but it would also massively accelerate climate change by causing a huge spike in resource consumption."** \
 Yeah, that part would be pretty bad. I guess theoretically we could only update the specifications and leave the physical items intact, but that'd still be a monumental task and then every length, weight, speed, et cetera would have weird, uneven, and oddly precise values.
 
 **The U.S. still hasn't adopted the metric system, and the Marks system would an even bigger change. Even if most of the world adopted the Marks system, there would almost certainly be a few holdouts. Rather than having two conflicting measurement systems, we'd have three.** \
-Another good point. If we're being realistic, even if we somehow managed to get the world to run on tims and TUT behind the scenes, most normal people would probably refuse to switch away from existing measurement systems.
+Another good point. Realistically, even if we somehow managed to get the world to run on tims and TUT behind the scenes, most normal people would probably refuse to switch away from existing measurement systems, even if lens and maz are better. This is pretty inconvenient for my argument, but I can't hide behind "please suspend your disbelief" anymore. Cultural inertia is really difficult to overcome.
 
 **"This is just contrarianism and a solution in search of a problem."** \
 Ah, but that's where you're wrong. The Marks system actually solves a very real problem. Read on to the next section.
 
 ## The Epochalypse
 
-Remember how I said that Unix time can only go up to a certain number of seconds (approximately 68 years)? This is called the Unix epoch. After `2^31` seconds have passed after 1970, we'll enter a new Unix epoch, causing Unix time to roll back to zero. This'll happen on January 19, 2038.
+Remember how I said that Unix time can only go up to a certain number of seconds (approximately 68 years)? This is called the Unix epoch. After `2^31` seconds have passed after 1970, we'll enter a new Unix epoch, causing Unix time to roll back to zero. This will happen on January 19, 2038.
 
-This is called the [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem). It's similar in concept to the Y2K bug, where every computer that stored the current year as a 2-digit number beleived that time had advanced from December 31, 1999 to January 1, 1900.
+This is called the [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem). It's similar in concept to the Y2K bug, where every computer that stored the current year as a 2-digit number believed that time had advanced from December 31, 1999 to January 1, 1900.
 
 The main difference between then and now is that there are a lot more computers nowadays than there were in 1999. Like, a **lot** more, and we depend on them far more heavily.
 
 The vast majority of modern computers use 64-bit Unix time, which won't run out for nearly 300 billion years. Even among the systems that do use 32-bit Unix time, many have robust error handling and will realize that something is amiss and won't actually think that it's 1970.
 
-But some of the most critical systems in the world _don't_ use modern computers, and many weren't designed to handle. The IRS and 92 of the top 100 global banks still primarily use mainframe computers from the 1960s. Their codebases contain many tens of millions of lines of code, most of it written in COBOL, which is a programming language where most of the people that knew it have retired and/or died.
+But some of the most critical systems in the world _don't_ use modern computers, and many weren't designed with robust error handling. The IRS and 92 of the top 100 global banks still primarily use mainframe computers from the 1960s. Their codebases contain many tens of millions of lines of code, most of it written in COBOL, which is a programming language where most of the people that knew it have retired and/or died.
 
 Verifying that a system is actually safe from the 2038 problem is extremely difficult. Even if a system always stores time in 64 bits, if it converts that time into 32 bits even once for an intermediate step, the whole system is now vulnerable. Normally, programmers write tests for this kind of stuff. But tests don't work on the 2038 problem because the system will always give the right answer until it suddenly doesn't, and by then it's too late. The only option is to read every single line of code and make sure that it doesn't use 32-bit time even once.
 
@@ -557,4 +538,14 @@ Accidentally using 32-bit seconds when you meant to use 64-bit seconds will stil
 
 In contrast, accidentally using seconds when you meant to use tims will cause the code to either fail outright or give an answer that's wrong by a factor of more than 5, which you can easily test for. If tim-using code runs sucessfully, you know that it's definitely safe from 2038. If it fails, you know that there's definitely a problem with the code and you can fix it before it becomes a global problem. Rather than manually auditing tens of millions of lines of code, you can just... run the code.
 
-Tims fill a specific niche created by Unix time's technical debt, the fintech industry's willingness to maintain 60-year-old mainframes, and the shortage of people who can properly audit COBOL code. Tims aren't the only solution (nor are they necessarily the best one) but they are a genuinely viable solution, and I think that the Marks system would be a substantial improvement over our current measurement and timekeeping systems.
+Tims fill a specific niche created by Unix time's technical debt, the fintech industry's willingness to maintain 60-year-old mainframes, and the shortage of people who can properly audit COBOL code. Tims aren't the only solution (nor are they necessarily the best one) but they are a genuinely viable solution.
+
+## Conclusion
+
+In mid-2024, when I was 13, I was idly playing with [Wolfram Alpha](https://www.wolframalpha.com/) and asked it to compute the number of miles in a Planck length (I was very bored). My curiosity was piqued when I noticed that the result, `1.0043x10^-38`, was within 1 part per hundred of a perfect magnitude. The idea occurred to me that we could use scaled-up Planck lengths to get the fundamentality of the Planck units and the convenience of the customary system. Over the next year and a half, I continued to think about this concept and about how a Planck-based measurement system would actually work. I thought about the magnitudes, pronunciations, multiples, and derived units that go into making a good unit system. I thought about the trade-offs of different timekeeping paradigms and how they would be used in different use cases. But perhaps most relevantly, I thought about how unimaginably difficult it would be to implement in practice.
+
+If the Marks system or something similar is ever genuinely adopted in any capacity, I will be extremely surprised. I personally will continue using meters and seconds. The utility of using units that other people can understand far outweighs the utility of being able to express the speed of light as `10^10`.
+
+However, I do think that the Marks system is genuinely better in many respects to both the metric system and the customary system. Even if it will never be practically used, it's a fun intellectual curiosity that's interesting to think about, and to write about. Thanks for indulging me, dear reader.
+
+~Ethan
