@@ -60,7 +60,7 @@ Leap seconds are a confusing, inconsistent mess that should be abolished.
 
 ![Map of current de facto time zones ](/media/timezones.webp "Time zones of the world")
 
-The image above is a map of UTC's time zones. Each zone represents a different offset from UTC (which is "zeroed" on the Greenwich Royal Observatory in England). Because "noon" is based the position of the sun, which varies by longitude, different longitudes experience noon at different times. Without time zones, noon would occur at different times throughout the world, which would violate UTC's goals. So UTC offsets the time by discrete increments depending on where you are on Earth.
+The image above is a map of UTC's time zones. Each zone represents a different offset from UTC (which is "zeroed" on the Greenwich Royal Observatory in England). Because "noon" is based on the position of the sun, which varies by longitude, different longitudes experience noon at different times. Without time zones, noon would occur at different times throughout the world, which would violate UTC's goals. So UTC offsets the time by discrete increments depending on where you are on Earth.
 
 The whole purpose of time zones is to correct for the sun's position varying by longitude, so time zones should be based entirely on longitude. They should be straight, parallel ribbons. In reality, time zones contour to geographical and geopolitical borders for political reasons, which results in the wacky and uneven zones that you see above.
 
@@ -88,7 +88,7 @@ As much as I pick on UTC, it accomplishes its stated goals admirably. It success
 
 But it shouldn't have to.
 
-Uniform time and Earth-tracking time are fundamentally different things. Both are necessary, but they are simply not compatible. Without stable time, it would be impossible to describe things precisely or to coordinate consistently across the globe. Without Earth-tracking time, it would be impossible to describe the day/night cycle consistently and people would go insane from sleep deprivation as their circiadian rhythms drifted out of sync. However, it simply doesn't make sense to use the same time unit for both Uniform and Earth-tracking time. They are different and should have different units with different names that are substantially different in value so that people don't conflate them.
+Stable time and Earth-tracking time are fundamentally different things. Both are necessary, but they are simply not compatible. Without stable time, it would be impossible to describe things precisely or to coordinate consistently across the globe. Without Earth-tracking time, it would be impossible to describe the day/night cycle consistently and people would go insane from sleep deprivation as their circadian rhythms drifted out of sync. However, it simply doesn't make sense to use the same time unit for both stable and Earth-tracking time. They are different and should have different units with different names that are substantially different in value so that people don't conflate them.
 
 Using a natural second when you meant to use a caesium second is objectively wrong and results in inconsistent behavior that causes real problems down the line. Had you accidentally used an hour instead of a second, you would instantly notice your mistake because the output would be immediately wrong by a factor of nearly four thousand. But because mixing up seconds is only wrong by two millionths of a percent, it's very difficult to catch these kinds of mistakes until the errors have compounded over years.
 
@@ -144,7 +144,7 @@ So I decided to extend the SI prefixes for a few important magnitudes that the o
 
 When possible, I used existing unofficial SI prefixes, but a few magnitudes didn't have _any_ proposed prefixes so I had to make up my own. I took inspiration from the numeral systems of other cultures because they often have succinct, cool-sounding words for numbers.
 
-Remember that these terms are just suggestions and are not set in stone. The table below is ordered from most to least important, not by scale.
+Remember that these terms are just suggestions and are not set in stone.
 
 <!-- prettier-ignore -->
 | Magnitude | Prefix | Reasoning |
@@ -152,10 +152,10 @@ Remember that these terms are just suggestions and are not set in stone. The tab
 | `10^4` | Myria | A pre-existing prefix: <https://en.wikipedia.org/wiki/Myria-> |
 | `10^5` | Lakh- | Derived from [Lakh](https://en.wikipedia.org/wiki/Lakh), the Indian numbering system word for 100,000  |
 | `10^7` | Hebdo- | A pre-existing prefix: <https://en.wikipedia.org/wiki/Hebdo-> | 
-| `10^-44` | Tetrakon- | Derived from the Greek word "[tetrakontatessera](https://translate.google.com/?sl=el&tl=en&text=tetrakontatessera&op=translate)", meaning "forty-four", because it's ten to the minus forty-four |
-| `10^-34` | Triantessera- | Derived from the Greek phrase "[triantatessera](https://translate.google.com/?sl=el&tl=en&text=triantatessera&op=translate)", meaning "thirty-four", because it's ten to the minus thirty-four |
-| `10^-8` | Ogdo- | Derived from the Greek word "[ogdoos](https://translate.google.com/?sl=el&tl=en&text=ogdoos&op=translate)", meaining "eighth", because it's ten to the minus eight |
 | `10^10` | Rahng- | Derived from the romanized form of the Pinyin pronunciation of [穰](https://en.wikipedia.org/wiki/Chinese_numerals#Large_numbers:~:text=%E7%A9%B0), the Chinese short scale numeral for `10^10` |
+| `10^-8` | Ogdo- | Derived from the Greek word "[ogdoos](https://translate.google.com/?sl=el&tl=en&text=ogdoos&op=translate)", meaning "eighth", because it's ten to the minus eight |
+| `10^-34` | Triantessera- | Derived from the Greek phrase "[triantatessera](https://translate.google.com/?sl=el&tl=en&text=triantatessera&op=translate)", meaning "thirty-four", because it's ten to the minus thirty-four |
+| `10^-44` | Tetrakon- | Derived from the Greek word "[tetrakontatessera](https://translate.google.com/?sl=el&tl=en&text=tetrakontatessera&op=translate)", meaning "forty-four", because it's ten to the minus forty-four |
 
 ## Tim
 
@@ -227,11 +227,11 @@ I chose to define 1 tim at exactly `10^44` Planck times because it results in a 
 
 ### Are tims too long?
 
-Tims are considerably longer than seconds. Rather than being 1 second long (approximately the frequency of a human heartbeat), a tim is over 5 seconds long. This is a massive departure from the fundamental time unit that everyone is used too. To count by tims, you'd say "one", wait for what feels like ages, and then get to say "two". I know that this seems alien and foreign and inconvenient.
+Tims are considerably longer than seconds. Rather than being 1 second long (approximately the frequency of a human heartbeat), a tim is over 5 seconds long. This is a massive departure from the fundamental time unit that everyone is used to. To count by tims, you'd say "one", wait for what feels like ages, and then get to say "two". I know that this seems alien and foreign and inconvenient.
 
 However, it's important to distinguish between cultural inertia and fundamental inconvenience. I believe that the reason that tims seem "wrong" is primarily inertia, which is a matter of implementation feasibility, which we agreed to suspend disbelief about. Imagine that we can magically just instantly make everyone acclimated to tims.
 
-In this scenario, I think that tims would be feel like a natural, convenient scale. Had I set 1 tim to equal 100 seconds or something, it would always be inconvenient even if everybody was magically used to it. There's a range of acceptable values for a base unit of time that's somewhere in between 0.1 seconds and 10 seconds, and I think that 5.4 seconds is within that range.
+In this scenario, I think that tims would feel like a natural, convenient scale. Had I set 1 tim to equal 100 seconds or something, it would always be inconvenient even if everybody was magically used to it. There's a range of acceptable values for a base unit of time that's somewhere in between 0.1 seconds and 10 seconds, and I think that 5.4 seconds is within that range.
 
 And if you need a less coarse unit of time than the tim, the decitim is quite convenient. It's even more precise than the second without being overly precise like the millisecond.
 
@@ -269,7 +269,7 @@ Combining lens with prefixes, you get a variety of supermultiples and submultipl
 | Hectolen        | 100 lens       | 16 meters (53 feet)          |
 | Kilolen         | 1,000 lens     | 161 meters (530 feet)        |
 | Myrialen        | 10,000 lens    | 1.6 kilometers (1.00 miles)  |
-| Lahklen         | 100,000 lens   | 16 kilometers (10 miles)     |
+| Lakhlen         | 100,000 lens   | 16 kilometers (10 miles)     |
 | Megalen         | 1,000,000 lens | 161 kilometers               |
 
 Note that 1 decalen is approximately the height of an average adult human, and 1 myrialen is almost exactly 1 customary mile to within 1 part per hundred.
@@ -290,8 +290,8 @@ Here are a few common lengths expressed in lens. It's a stylistic choice whether
 | Average human height  | 1 decalen (10 lens)           |
 | African elephant      | 4 decalens (40 lens)          |
 | Blue whale            | 1.5 hectolens (150 lens)      |
-| Brooklyn bridge       | 3 kilolens (3,000 lens)       |
-| Grand canyon          | 2.7 megalens (270 myrialens)  |
+| Brooklyn Bridge       | 3 kilolens (3,000 lens)       |
+| Grand Canyon          | 2.7 megalens (270 myrialens)  |
 | Australia             | 24 megalens (2,400 myrialens) |
 
 ### Why 10^34?
@@ -306,7 +306,7 @@ The **maz** is the fundamental unit of mass for the Marks system. It's pronounce
 
 ### Etymology
 
-Maz gets its name from "mass", but it's pronounced and spelled differently in order to make it distinct.
+Maz get their name from "mass", but it's pronounced and spelled differently in order to make it distinct.
 
 Had I named it "mas" to follow the truncation convention set by tims and lens, it would be impossible to tell "mass" and "mas" apart when spoken aloud. By backing the "a" and voicing the "s" (turning it into a "z"), the unit (maz) is phonetically and orthographically distinct from the dimensionality (mass).
 
@@ -341,9 +341,8 @@ Here are the masses of a few common objects expressed in maz.
 
 | Object                                  | Maz                     |
 | --------------------------------------- | ----------------------- |
-| Mosquito                                | 27 nanomaz              |
 | Paperclip                               | 0.5 millimaz            |
-| US penny                                | 1.1 millimaz            |
+| U.S. penny                              | 1.1 millimaz            |
 | Banana                                  | 54 millimaz             |
 | Basketball                              | 287 millimaz            |
 | Macbook Air                             | 0.57 maz                |
@@ -375,7 +374,7 @@ To prevent this post from being 10,000 words long, I'm going to put a bunch of d
 | Vel  | **Vel**ocity     | `len / tim`           | `/vɛl/`       | `0.029 m/s`    |
 | Ler  | Acce**ler**ation | `len / tim^2`         | `/lɚ/`        | `0.005 m/s^2`  |
 | Vol  | **Vol**ume       | `len^3`               | `/vɑl/`       | `0.004 m^3`    |
-| Ary  | **Are**a         | `len^2`               | `/ɛri/ `      | `0.026 m^2`    |
+| Ary  | **Are**a         | `len^2`               | `/ɛri/`       | `0.026 m^2`    |
 | Tum  | Momen**tum**     | `maz * len / tim`     | `/tʌm/`       | `0.065 kg m/s` |
 | Pul  | Force            | `maz * len / tim^2`   | `/pʊl/`       | `0.012 N`      |
 | Ner  | E**ner**gy       | `maz * len^2 / tim^2` | `/nɛr/`       | `0.002 J`      |
@@ -488,7 +487,7 @@ You can also use a literal physical sundial. Seriously. The concepts are the sam
 
 ### Specification
 
-I don't have a firm specification for Sundial time. As long as it's Earth-tracking and doesn't use seconds, it fits the bill. Sundial time is already very arbitrary because it uses Earth's orbit rather any fundamental constants, so it's much more important to optimize for convenience than for non-arbitrariness. I leave designing the precise specification as an exercise to the reader.
+I don't have a firm specification for Sundial time. As long as it's Earth-tracking and doesn't use seconds, it fits the bill. Sundial time is already very arbitrary because it uses Earth's orbit rather than any fundamental constants, so it's much more important to optimize for convenience than for non-arbitrariness. I leave designing the precise specification as an exercise to the reader.
 
 ...That being said, I do have a few hints/suggestions.
 
@@ -504,7 +503,7 @@ Yes, that's a good point. It'd certainly be a very rough transition period. Thos
 **"Re-manufacturing everything would not only be unimaginably expensive but it would also massively accelerate climate change by causing a huge spike in resource consumption."** \
 Yeah, that part would be pretty bad. I guess theoretically we could only update the specifications and leave the physical items intact, but that'd still be a monumental task and then every length, weight, speed, et cetera would have weird, uneven, and oddly precise values.
 
-**The U.S. still hasn't adopted the metric system, and the Marks system would an even bigger change. Even if most of the world adopted the Marks system, there would almost certainly be a few holdouts. Rather than having two conflicting measurement systems, we'd have three.** \
+**"The U.S. still hasn't adopted the metric system, and the Marks system would be an even bigger change. Even if most of the world adopted the Marks system, there would almost certainly be a few holdouts. Rather than having two conflicting measurement systems, we'd have three."** \
 Another good point. Realistically, even if we somehow managed to get the world to run on tims and TUT behind the scenes, most normal people would probably refuse to switch away from existing measurement systems, even if lens and maz are better. This is pretty inconvenient for my argument, but I can't hide behind "please suspend your disbelief" anymore. Cultural inertia is really difficult to overcome.
 
 **"This is just contrarianism and a solution in search of a problem."** \
@@ -512,7 +511,7 @@ Ah, but that's where you're wrong. The Marks system actually solves a very real 
 
 ## The Epochalypse
 
-Remember how I said that Unix time can only go up to a certain number of seconds (approximately 68 years)? This is called the Unix epoch. After `2^31` seconds have passed after 1970, we'll enter a new Unix epoch, causing Unix time to roll back to zero. This will happen on January 19, 2038.
+Remember how I said that Unix time can only go up to a certain number of seconds (approximately 68 years)? This is called the Unix epoch. After `2^31` seconds have passed since 1970, we'll enter a new Unix epoch, causing Unix time to roll back to zero. This will happen on January 19, 2038.
 
 This is called the [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem). It's similar in concept to the Y2K bug, where every computer that stored the current year as a 2-digit number believed that time had advanced from December 31, 1999 to January 1, 1900.
 
@@ -532,11 +531,11 @@ This is where the Marks system comes in.
 
 Because TUT was never 32-bit, you can be sure that any system using TUT is 64-bit, and therefore is safe from the 2038 problem. So just by looking at a program and seeing which units it uses, you can determine if it is "possibly safe or possibly vulnerable and I have to read several million lines of code to be sure" or "definitely safe".
 
-There's one big reason why rewriting systems to use tims might be genuinely easier than auditing every line of code: it lets you to use empirical tests.
+There's one big reason why rewriting systems to use tims might be genuinely easier than auditing every line of code: it lets you use empirical tests.
 
-Accidentally using 32-bit seconds when you meant to use 64-bit seconds will still get you the right answer every time when try to run the code, so it's invisible to normal tests. There are specialized tests designed to catch 2038 bugs by setting the system clock to a date in the future, but they doesn't encapsulate interactions with other servers and can still miss particularly subtle bugs. The fact that code runs successfully isn't an indicator of whether or not it's vulnerable to 2038. The only way to be sure is to carefully inspect every single line using expensive, slow, and mistake-prone humans.
+Accidentally using 32-bit seconds when you meant to use 64-bit seconds will still get you the right answer every time when you run the code, so it's invisible to normal tests. There are specialized tests designed to catch 2038 bugs by setting the system clock to a date in the future, but they don't encapsulate interactions with other servers and can still miss particularly subtle bugs. The fact that code runs successfully isn't an indicator of whether or not it's vulnerable to 2038. The only way to be sure is to carefully inspect every single line using expensive, slow, and mistake-prone humans.
 
-In contrast, accidentally using seconds when you meant to use tims will cause the code to either fail outright or give an answer that's wrong by a factor of more than 5, which you can easily test for. If tim-using code runs sucessfully, you know that it's definitely safe from 2038. If it fails, you know that there's definitely a problem with the code and you can fix it before it becomes a global problem. Rather than manually auditing tens of millions of lines of code, you can just... run the code.
+In contrast, accidentally using seconds when you meant to use tims will cause the code to either fail outright or give an answer that's wrong by a factor of more than 5, which you can easily test for. If tim-using code runs successfully, you know that it's definitely safe from 2038. If it fails, you know that there's definitely a problem with the code and you can fix it before it becomes a global problem. Rather than manually auditing tens of millions of lines of code, you can just... run the code.
 
 Tims fill a specific niche created by Unix time's technical debt, the fintech industry's willingness to maintain 60-year-old mainframes, and the shortage of people who can properly audit COBOL code. Tims aren't the only solution (nor are they necessarily the best one) but they are a genuinely viable solution.
 
