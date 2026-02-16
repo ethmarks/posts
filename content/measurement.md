@@ -1,7 +1,7 @@
 ---
 title: A new measurement system
 published: 2026-02-16
-desc: There are two different definitions of a "second", the one you learned and the one that every scientist, computer, and yardstick uses. The two definitions are fundamentally incompatible and have so much technical debt that humanity would be better off starting afresh.
+desc: Caesium (SI) seconds and natural (solar) seconds are fundamentally incompatible, causing UTC to require leap seconds, time zones, and DST. I propose the Marks system, a measurement framework based on Planck units that separates stable time from Earth-tracking time.
 ---
 
 If I were to ask you "How many seconds are in a day?", you would probably either know an answer off the top of your head or could easily calculate one. Your answer would almost certainly be "86,400". Your answer would be wrong.
@@ -545,6 +545,6 @@ In mid-2024, when I was 13, I was idly playing with [Wolfram Alpha](https://www.
 
 If the Marks system or something similar is ever genuinely adopted in any capacity, I will be extremely surprised. I personally will continue using meters and seconds. The utility of using units that other people can understand far outweighs the utility of being able to express the speed of light as `10^10`.
 
-However, I do think that the Marks system is genuinely better in many respects to both the metric system and the customary system. Even if it will never be practically used, it's a fun intellectual curiosity that's interesting to think about, and to write about. Thanks for indulging me, dear reader.
+However, I do think that the Marks system is genuinely better in many respects to both the metric system and the customary system. Even if it will never be practically used, it's a fun intellectual curiosity that's interesting to think about and to write about. Thanks for indulging me, dear reader.
 
 ~Ethan
