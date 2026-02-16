@@ -4,8 +4,8 @@ import inline from "lume/plugins/inline.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
 import lightningcss from "lume/plugins/lightningcss.ts";
 import base_path from "lume/plugins/base_path.ts";
-import { imageRule } from "./render_image.js";
-import { citationPlugin } from "./render_citation.js";
+import { imageRule } from "./src/render_image.js";
+import { citationPlugin } from "./src/render_citation.js";
 
 const url = ("https://" + Deno.env.get("VERCEL_URL")) || "http://localhost";
 const basePath = Deno.env.get("BASE_PATH") || ""; // "/posts"
