@@ -7,6 +7,7 @@ import base_path from "lume/plugins/base_path.ts";
 import { imageRule } from "./src/render_image.js";
 import { citationPlugin } from "./src/render_citation.js";
 import anchorPlugin from "npm:markdown-it-anchor@^9.2.0";
+import collapsiblePlugin from "npm:markdown-it-collapsible@^2.0.2";
 
 const url = ("https://" + Deno.env.get("VERCEL_URL")) || "http://localhost";
 const basePath = Deno.env.get("BASE_PATH") || ""; // "/posts"
@@ -48,7 +49,7 @@ site.use(markdown({
   rules: {
     image: imageRule,
   },
-  plugins: [citationPlugin, anchorPlugin],
+  plugins: [citationPlugin, anchorPlugin, collapsiblePlugin],
 }));
 site.use(readingInfo({
   wordsPerMinute: 200,
