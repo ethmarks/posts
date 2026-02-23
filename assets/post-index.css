@@ -78,7 +78,7 @@
         border-color: var(--color-accent-transparent-30);
         box-shadow: var(--shadow-standard-hover);
 
-        .title {
+        h3 {
             color: var(--color-accent);
         }
     }
@@ -94,13 +94,6 @@
         &:hover {
             transform: translateY(-2px);
         }
-    }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-        min-width: 0;
     }
 
     h3 {
