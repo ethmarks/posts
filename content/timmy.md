@@ -23,7 +23,12 @@ Then Tim and Diane got the idea to spawn in a block of gold in the simulated uni
 They realized that they were in a simulation. In order for the block of gold to have appeared, there must have been a Tim and Diane "above" them in the simulation stack who created the block into their universe. In hindsight, they realize that they could have inferred that using logic. There were infinitely many simulated universes and only one non-simulated universe, so the probability that they _weren't_ in a simulated universe was 1 divided by infinity, which is equal to zero.
 
 +++ Read this if you're a pedantic mathematician
-Yes, I realize that "1 divided by infinity, which is equal to zero" isn't a mathematically rigorous statement in normal arithmetic. Pretend that either I said "the limit of 1 divided by `x` as `x` approaches infinity, which is equal to zero" or that I'm using the [extended real number system](https://en.wikipedia.org/wiki/Extended_real_number_line). Take your pick.
+
+Yes, I realize that "1 divided by infinity, which is equal to zero" isn't a mathematically rigorous statement in normal arithmetic. Pretend that I said:
+
+$$\lim_{x \to \infty} \frac{1}{x} = 0$$
+
+...or that I'm using the [extended real number system](https://en.wikipedia.org/wiki/Extended_real_number_line). Take your pick.
 +++
 
 What's more, the odds that they were anywhere near the top of the stack or the bottom of the stack were also equal to zero. This meant that they had an infinite number of universes inside their hypercomputer and were infinitely many levels deep inside the stack of simulated universes.
