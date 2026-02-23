@@ -1,22 +1,11 @@
 ---
 layout: layout.vto
 stylesheets: ["/assets/post-index.css"]
-scripts: ["/assets/randompost.js"]
 ---
 
 <h1 class="animated">{{ title}}</h1>
 <article class="animated">
     <p>These are my posts. There are many like them, but these ones are mine.</p>
-    <div id="random-post-container">
-        <a
-            href="#"
-            id="random-post-btn"
-            class="animated"
-            title="Go to a random post"
-        >
-            🎲 Random Post
-        </a>
-    </div>
 
     <nav class="post-links">
         {{ for post of search.pages("layout=post.vto !unlisted=true", "published=desc") }}
