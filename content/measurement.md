@@ -2,6 +2,7 @@
 title: A new measurement system
 published: 2026-02-16
 desc: Caesium (SI) seconds and natural (solar) seconds are fundamentally incompatible, causing UTC to require leap seconds, time zones, and DST. I propose the Marks system, a measurement framework based on Planck units that separates stable time from Earth-tracking time.
+img: /media/sundial.webp
 ---
 
 If I were to ask you "How many seconds are in a day?", you would probably either know an answer off the top of your head or could easily calculate one. Your answer would almost certainly be "86,400". Your answer would be wrong.
