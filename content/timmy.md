@@ -1,5 +1,5 @@
 ---
-title: Ethically destroying infinite universes
+title: How to ethically destroy infinite universes
 published: 2026-02-22
 desc: A proposed solution to the ethical dilemma at the end of Sam Hughes' short story 'I Don't Know, Timmy, Being God Is a Big Responsibility.'
 ---
@@ -77,8 +77,8 @@ At this point, all bets are off. Hopefully, the last remaining simulated univers
 
 ## Conclusion
 
-Thanks for reading! I really like Hughes' short stories, and this one in particular explores its central concept very cleverly.
+I really like Hughes' short stories, and this one in particular explores its central concept very cleverly.
 
-It reminds me of the TV series [_Devs_](https://www.imdb.com/title/tt8134186), with the difference being that _Devs_'s seemingly satisfying ending turns out to be pretty dystopian under logical scrutiny, while _I Don't Know, Timmy, Being God Is a Big Responsibility_'s seemingly dystopian ending turns out to be pretty satisfying under logical scrutiny. I guess the moral lesson of both stories is not to create infinite recursive universes. So please don't do that, dear reader.
+The concept reminds me of the TV series [_Devs_](https://www.imdb.com/title/tt8134186), with the difference being that _Devs_'s seemingly satisfying ending turns out to be pretty dystopian under logical scrutiny, while _I Don't Know, Timmy, Being God Is a Big Responsibility_'s seemingly dystopian ending turns out to be pretty satisfying under logical scrutiny. I guess the moral lesson of both stories is not to create infinite recursive universes. So please don't do that, dear reader.
 
 ~Ethan
