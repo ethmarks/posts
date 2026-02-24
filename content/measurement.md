@@ -459,6 +459,8 @@ I don't personally have any strong preference for what TUT zero should be. It sh
 
 ## Sundial Time
 
+![A metal sundial on a stone pedestal. On the outer circumference lie Roman numerals counting up to 24. On the inner circumference are ornate symbols. In the center is a sleek angled gnomon. The gnomon's shadow lies approximately halfway between the I and II.](/media/sundial.webp)
+
 The problem with TUT is that it doesn't synchronize with the Earth's rotation or its orbit. This is genuinely important for sleep schedules, farming, and many, many other things. Simply not having an Earth-tracking time system is unacceptable.
 
 So I propose **Sundial time**. Sundial time is an Earth-tracking timekeeping system, similar to natural seconds. The length of the units is slightly different each day because the Earth's rotation isn't constant.
