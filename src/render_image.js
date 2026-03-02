@@ -1,4 +1,4 @@
-import { imageSize } from "npm:image-size";
+import { imageSize } from "npm:image-size@^2.0.2";
 
 /**
  * Custom markdown-it rendering rule for images that supports:
