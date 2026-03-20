@@ -404,7 +404,7 @@ Of course, it would be great if the base units were human-scale, but they don't 
 
 Note that many vernacular multiples have either the same number of syllables or fewer compared to their metric or customary counterparts, so they aren't harder to say. For example, "hectovel" is three syllables, which is the same as "miles per hour" and shorter than both "meters per second" and "kilometers per hour". Likewise, "kilovol" is three syllables, which is the same as "cubic feet" and shorter than "cubic meters".
 
-## Temperature?
++++ Appendix: Temperature
 
 The Marks system doesn't have a unit for temperature. This is for several reasons.
 
@@ -415,6 +415,8 @@ Secondly, temperature isn't technically a true dimensionality. Temperature is ju
 Thirdly, in order to make a convenient temperature system (i.e. one that isn't zeroed at absolute zero), I would have to choose an arbitrary offset point to set as 0°. Even if I tried to be scientific and base it off of the properties of something (like how Celsius sets 0° as the freezing point of pure water), the substance and phase boundary that I would choose would still be arbitrary.
 
 I think it's better to just use the existing temperature systems rather than inventing a Marks system temperature system just for the sake of having one.
+
++++
 
 ## Tim Universal Time
 
