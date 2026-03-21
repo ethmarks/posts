@@ -524,6 +524,20 @@ Firstly, I suggest using **dal** as the unit of Sundial time, pronounced `/dɑː
 
 Secondly, I suggest that 1 dal should be equal to `1/90,720` of a day. This is [approximately](https://www.wolframalpha.com/input?i=%28mean+solar+day+%2F+90%2C720%29+%2F+%2810%5E44+planck+times+%2F+10%29) 1.7665 decitims (0.95 caesium seconds). I selected 90,720 because it's extremely divisible; it has [120 divisors](https://www.wolframalpha.com/input?i=divisors+of+90%2C720) (compared to 86,400's mere [96 divisors](https://www.wolframalpha.com/input?i=divisors+of+86%2C400)). It's also divisible by 7, which 86,400 is not.
 
+## Marks System Converter Tool
+
+Obviously, no existing tool supports the Marks system. If you ask Wolfram Alpha to "convert 10 len to meters", it'll helpfully interpret "10 len" as "the closing price of the Lennar Corporation (NYSE:LEN) from the beginning to end of 2010", which it obviously can't convert to meters, so it'll throw an "incompatible units" error. I'm not joking; [try it yourself](https://www.wolframalpha.com/input?i=convert+10+len+to+meters).
+
+So if you want to convert anything to or from the Marks system, you have to either manually calculate it using the conversion ratios I've given, or you have to substitute "len" for "`10^44` Planck lengths" into the query box.
+
+Both of those are inconvenient, so for your convenience, I made a little web app that natively understands the Marks system: msct (Marks System Converter Tool). You can try it live here: <https://msct.vercel.app/>.
+
+[![A screenshot of msct with the input '42 lens' and six conversions, including '4.2 decalens (42 lens)', '6.79 meters', and '7.42 yards'](/media/msct_screenshot.webp)](https://msct.vercel.app/)
+
+It can't do any actual calculations like Wolfram Alpha can (mainly because I built this in a couple days and didn't have hundreds of millions of dollars nor 400 employees like Wolfram Research did), but it understands most number formats (including scientific notation), all of the SI and Marks prefixes, and the units of the metric, customary, and Marks systems.
+
+If you're interested in the technical details, you can read the [README](https://github.com/ethmarks/msct?tab=readme-ov-file).
+
 ## You can stop suspending your disbelief now
 
 **"Adopting the Marks system would break 8 billion people's unit intuitions. The lost productivity of people having to relearn basic measurements would surely amount to trillions of dollars at minimum."** \
