@@ -470,15 +470,15 @@ Anchoring TUT on the CMB is still an arbitrary choice, but it's the best option 
 
 The consequence to this is that, because Earth is _not_ stationary relative to the CMB, we have to factor in time dilation. Earth has a CMB-relative peculiar velocity of [approximately](https://en.wikipedia.org/wiki/Cosmic_microwave_background#:~:text=369.82%20%C2%B1%200.11%20km/s) `369,820 m/s`, which is about 0.12% of the speed of light. At such a small fraction of the speed of light, relativistic effects aren't really noticeable at a human scale. However, they do exist, and for high-precision applications, they cannot be ignored.
 
-Here's the formula to calculate how big Earth-relative tims are in terms of CMB-relative tims. I'm only considering the relativistic time dilation from Earth's CMB-relative peculiar velocity and the gravitational time dilation from Earth's gravity. Those are the two most significant sources of time dilation on Earth (and by a lot), but a slightly more accurate formula would also consider the gravity of other nearby objects like the Sun and the Moon.
+Here's the formula to calculate how long Earth-relative tims are in terms of CMB-relative tims. To keep things simple, I'm only considering the relativistic time dilation from Earth's CMB-relative peculiar velocity and the gravitational time dilation from Earth's gravity. Those are the two most significant sources of time dilation on Earth (and by a lot), but a slightly more accurate formula would also consider the gravity of other nearby objects like the Sun and the Moon.
 
 $$\frac{10^{44} \times t_P}{\sqrt{1 - \frac{(369,820 \text{ m/s})^2}{c^2}} \times (1 - \frac{G \times M_{\oplus}}{R_{\oplus} \times c^2})}$$
 
-It's [approximately](https://www.wolframalpha.com/input?i=N%5B%2810%5E44+*+planck+time%29+%2F+%28sqrt%281+-+%28370+km%2Fs%29%5E2+%2F+c%5E2%29+*+%281+-+%28G+*+Earth+mass%29+%2F+%28Earth+radius+*+c%5E2%29%29%29+in+planck+times%2C10%5D) `1.000000762` tims. It's not a lot, but it will compound given enough time.
+It's [approximately](https://www.wolframalpha.com/input?i=N%5B%2810%5E44+*+planck+time%29+%2F+%28sqrt%281+-+%28370+km%2Fs%29%5E2+%2F+c%5E2%29+*+%281+-+%28G+*+Earth+mass%29+%2F+%28Earth+radius+*+c%5E2%29%29%29+in+planck+times%2C10%5D) `1.000000762` tims. It's not a big difference, but it compounds over time.
 
 My proposed solution to this is to just not use local (Earth-relative) tims. The downside is that 1 tim won't equal exactly `10^44` local Planck times, but the upside is that it allows every object in the universe to agree on how long 1 tim is and what TUT value the current moment in time is.
 
-This is useful for GPS and internet satellites in the modern day, and in a sci-fi future scenario, one could imagine that it'd also be useful for extraplanetary colonies.
+This would be useful to GPS and internet satellites in the modern day, and in a sci-fi future scenario, one could imagine that it'd also be useful for extraplanetary colonies.
 
 It's also worth noting that UTC doesn't deal with this. At all. Astronomers have to use systems like [TCB](https://en.wikipedia.org/wiki/Barycentric_Coordinate_Time) (which factors out gravitational time dilation but not relativistic time dilation) to compensate for the fact that almost all of their telescopes are either on Earth or near Earth's gravity well.
 
@@ -575,5 +575,25 @@ In mid-2024, when I was 13, I was idly playing with [Wolfram Alpha](https://www.
 If the Marks system or something similar is ever genuinely adopted in any capacity, I will be extremely surprised. I personally will continue using meters and seconds. The utility of using units that other people can understand far outweighs the utility of being able to express the speed of light as `10^10`.
 
 However, I do think that the Marks system is genuinely better in many respects to both the metric system and the customary system. Even if it will never be practically used, it's a fun intellectual curiosity that's interesting to think about and to write about. Thanks for indulging me, dear reader.
+
++++ Appendix: Planck Unit Uncertainty
+
+I've tried to make it clear that I'm not genuinely advocating that we adopt the Marks system. The sheer amount of cultural inertia that seconds have is already an effectively insurmountable obstacle to practical adoption. However, I worry that some readers might still come away from this article believing that the Marks system could ever be anything more than a thought experiment. This appendix should remedy that.
+
+We don't know how large each of the Planck units are.
+
+We know the formulas for all of the Planck units and we can measure most of the constituent constants very precisely, but there's one constant that is very tricky to measure: the gravitational constant. Gravity is the weakest of the four fundamental forces, so to measure it you either need impractically large experiments or extremely precise measuring equipment. It's also impossible to shield against gravity; if a truck happens to drive past your lab during an experiment or someone walks past the door, the gravitational noise is often enough to ruin your measurements.
+
+Through very clever experiments, we've managed to measure the gravitational constant very precisely, but these different experiments conflict with each other and have non-overlapping error bars. We are only certain of the value of the gravitational constant up to 6 significant figures.
+
+Because our value for the gravitational constant is limited to 6 significant figures, everything that we derive from the gravitational constant, notably including all of the Planck units, is also limited to 6 significant figures. Because the Marks system spans 54 orders of magnitude, those 6 sigfigs aren't nearly enough.
+
+The only way to fix this is to have a high-precision value for the gravitational constant, but that doesn't seem to be on the near horizon. I personally suspect (though I am not even slightly an expert in this field so please don't take anything I say seriously) that we'll need a viable theory of quantum gravity before we can determine the gravitational constant to a sufficiently-precise value, and we're not anywhere close to solving quantum gravity.
+
+Until then, the Marks system does not work. Even on paper, even if you could magically make everyone use the Marks system, we literally do not have the technology to determine the base units to sufficient precision.
+
+For example, if we tried to express the diameter of Earth in len using our current value of the gravitational constant, the error bar is approximately 140 meters. By contrast, when we express the diameter of Earth in meters, the error bar is approximately `0.000000012742` meters. The latter is nearly two orders of magnitude smaller than the wavelength of visible light, while the former is approximately the height of the Great Pyramid of Giza.
+
++++
 
 ~Ethan
