@@ -462,21 +462,21 @@ I don't personally have any strong preference for what TUT zero should be. It sh
 
 +++ Appendix: Special Relativity
 
-As it is, there's a bit of a problem with TUT. It purports to be a universal timekeeping system, but that's fundamentally impossible. Because of locality and special relativity, there is no universal "now". Since it's impossible to have a universal "now", we also can't have a universal timekeeping system, which means that TUT isn't universal.
+As it is, there's a bit of a problem with TUT. It purports to be a universal timekeeping system, but that's fundamentally impossible. Because of locality and special relativity, [there is no universal "now"](https://en.wikipedia.org/wiki/Relativity_of_simultaneity). Since it's impossible to have a universal "now", we also can't have a universal timekeeping system, which means that TUT isn't universal.
 
-However, by saying the magic "relative to the privileged reference frame of cosmic microwave background" incantation, we can get pretty close. Because CMB is (probably) the same across the whole universe, a timekeeping system that uses it as the rest frame is as close to "universal" as it's possible to get.
+However, using the magic "relative to the privileged reference frame of cosmic microwave background" incantation, we can get pretty close. Because CMB is (probably) the same across the whole universe, a timekeeping system that uses it as the rest frame is as close to "universal" as it's possible to get.
 
-Anchoring TUT on the CMB is still an arbitrary choice, but it's the best option available. The next best alternative would be to anchor it on Earth, which would be even more arbitrary.
+Anchoring TUT on the CMB is still an arbitrary choice, but it's the best option available. The next best alternative would be to anchor it on Earth, which would be even more arbitrary and much harder to measure from anywhere in the universe.
 
-The consequence to this is that, because Earth is _not_ stationary relative to the CMB, we have to factor in time dilation. Earth has a CMB-relative peculiar velocity of [approximately](https://en.wikipedia.org/wiki/Cosmic_microwave_background#:~:text=369.82%20%C2%B1%200.11%20km/s) `369,820 m/s`, which is about 0.12% of the speed of light. At such a small fraction of the speed of light, relativistic effects aren't really noticeable at a human scale. However, they do exist, and for high-precision applications, they cannot be ignored.
+The consequence to this is that, because Earth isn't stationary relative to the CMB, we have to factor in time dilation. Earth has a CMB-relative peculiar velocity of [approximately](https://en.wikipedia.org/wiki/Cosmic_microwave_background#:~:text=369.82%20%C2%B1%200.11%20km/s) `369,820 m/s`, which is about 0.12% of the speed of light. At such a small fraction of the speed of light, relativistic effects aren't really noticeable at a human scale. However, they do exist, and for high-precision applications, they cannot be ignored.
 
 Here's the formula to calculate how long Earth-relative tims are in terms of CMB-relative tims. To keep things simple, I'm only considering the relativistic time dilation from Earth's CMB-relative peculiar velocity and the gravitational time dilation from Earth's gravity. Those are the two most significant sources of time dilation on Earth (and by a lot), but a slightly more accurate formula would also consider the gravity of other nearby objects like the Sun and the Moon.
 
 $$\frac{1}{\sqrt{1 - \frac{(369,820 \text{ m/s})^2}{c^2}} \times (1 - \frac{G \times M_{\oplus}}{R_{\oplus} \times c^2})}$$
 
-It's [approximately](https://www.wolframalpha.com/input?i=N%5B1+%2F+%28sqrt%281+-+%28370+km%2Fs%29%5E2+%2F+c%5E2%29+*+%281+-+%28G+*+Earth+mass%29+%2F+%28Earth+radius+*+c%5E2%29%29%29%2C10%5D) `1.000000762`. This means that 1 Earth tim (exactly `10^44` measured Planck times) is longer than 1 CMB tims by about 762 billionths of a CMB tim. It's not a big difference, but it compounds over time.
+It's [approximately](https://www.wolframalpha.com/input?i=N%5B1+%2F+%28sqrt%281+-+%28370+km%2Fs%29%5E2+%2F+c%5E2%29+*+%281+-+%28G+*+Earth+mass%29+%2F+%28Earth+radius+*+c%5E2%29%29%29%2C10%5D) `1.000000762`. This means that 1 Earth tim (exactly `10^44` Earth-relative Planck times) is longer than 1 CMB tim by about 762 billionths of a CMB tim. It's not a big difference, but it compounds over time.
 
-My proposed solution to this is to just not use local (Earth-relative) tims. The downside is that 1 tim won't equal exactly `10^44` local Planck times, but the upside is that it allows every object in the universe to agree on how long 1 tim is and what TUT value the current moment in time is.
+This sounds eerily similar to the caesium seconds vs solar seconds conflation that is the whole justification for the Marks system. My proposed solution is to just not use local (Earth-relative) tims. The downside is that 1 tim won't equal exactly `10^44` local Planck times, but the upside is that it allows every object in the universe to agree on how long 1 tim is and what TUT value the current moment in time is.
 
 This would be useful to GPS and internet satellites in the modern day, and in a sci-fi future scenario, one could imagine that it'd also be useful for extraplanetary colonies.
 
