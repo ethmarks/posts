@@ -380,6 +380,20 @@ To prevent this post from being 10,000 words long, I'm going to put a bunch of d
 | Pul  | Force            | `maz * len / tim^2`   | `/pʊl/`       | `0.012 N`      |
 | Ner  | E**ner**gy       | `maz * len^2 / tim^2` | `/nɛr/`       | `0.002 J`      |
 
++++ Appendix: Temperature
+
+The Marks system doesn't have a unit for temperature. This is for several reasons.
+
+Firstly, none of the big three existing temperature systems (Celsius, Fahrenheit, and Kelvin) are defined in terms of seconds. The point of the Marks system is to provide Planck-based alternatives for the systems that depend on seconds. Temperature systems don't depend on seconds, so they don't need alternatives.
+
+Secondly, temperature isn't technically a true dimensionality. Temperature is just an expression of energy (via the Boltzmann constant), which there's already a Marks unit for: ner. If you really insist on using Marks units for temperature, you can. For example, 100°C is [approximately](https://www.wolframalpha.com/input?i=%28Boltzmann+constant+*+100+degrees+Celsius+in+joules%29+%2F+%2810%5E8+Planck+masses+*+%2810%5E34+Planck+lengths%29%5E2+%2F+%2810%5E44+Planck+times%29%5E2%29) 2.634 attoner. If I created a new temperature unit, I would be repackaging an existing dimensionality in an arbitrary new unit with an arbitrary scale and an arbitrary name, which goes against the goals of the Marks system.
+
+Thirdly, in order to make a convenient temperature system (i.e. one that isn't zeroed at absolute zero, which would be inconvenient for human-scale temperatures), I would have to choose an arbitrary offset point to set as 0°. Even if I tried to be scientific and base it off of the properties of something (like how Celsius sets 0° as the freezing point of pure water), the substance and phase boundary that I would choose would still be arbitrary.
+
+I think it's better to just use the existing temperature systems rather than inventing a Marks system temperature system just for the sake of having one.
+
++++
+
 ### Notes
 
 My suggested pronunciation for ler is `/lɚ/`. This is the natural pronunciation for most American English speakers (including me) that aligns with how we pronounce "acce**ler**ation", but it contains a [rhotic schwa](https://en.wikipedia.org/wiki/R-colored_vowel), which can be difficult to pronounce if you speak almost any language/dialect other than American English or Mandarin Chinese. If you're part of the 80% of humanity that doesn't use rhotic schwas, I suggest pronouncing ler as `/lɛr/` (rhymes with air).
@@ -403,18 +417,6 @@ In cases like these, a convenient supermultiple should be used in common vernacu
 Of course, it would be great if the base units were human-scale, but they don't naturally work out that way and it's not worth losing the ease of 1:1 unit coherence by using arbitrary conversion ratios.
 
 Note that many vernacular multiples have either the same number of syllables or fewer compared to their metric or customary counterparts, so they aren't harder to say. For example, "hectovel" is three syllables, which is the same as "miles per hour" and shorter than both "meters per second" and "kilometers per hour". Likewise, "kilovol" is three syllables, which is the same as "cubic feet" and shorter than "cubic meters".
-
-## Temperature?
-
-The Marks system doesn't have a unit for temperature. This is for several reasons.
-
-Firstly, none of the big three existing temperature systems (Celsius, Fahrenheit, and Kelvin) are defined in terms of seconds. The point of the Marks system is to provide Planck-based alternatives for the systems that depend on seconds. Temperature systems don't depend on seconds, so they don't need alternatives.
-
-Secondly, temperature isn't technically a true dimensionality. Temperature is just an expression of energy (via the Boltzmann constant), which there's already a Marks unit for: ner. If you really insist on using Marks units for temperature, you can. For example, 100°C is [approximately](https://www.wolframalpha.com/input?i=%28Boltzmann+constant+*+100+degrees+Celsius+in+joules%29+%2F+%2810%5E8+Planck+masses+*+%2810%5E34+Planck+lengths%29%5E2+%2F+%2810%5E44+Planck+times%29%5E2%29) 2.6 attoner. If I created a new temperature unit, I would be repackaging an existing dimensionality in an arbitrary new unit with an arbitrary scale and an arbitrary name, which goes against the goals of the Marks system.
-
-Thirdly, in order to make a convenient temperature system (i.e. one that isn't zeroed at absolute zero), I would have to choose an arbitrary offset point to set as 0°. Even if I tried to be scientific and base it off of the properties of something (like how Celsius sets 0° as the freezing point of pure water), the substance and phase boundary that I would choose would still be arbitrary.
-
-I think it's better to just use the existing temperature systems rather than inventing a Marks system temperature system just for the sake of having one.
 
 ## Tim Universal Time
 
@@ -458,6 +460,30 @@ Since we'll have to deal with negative TUT values regardless, we could also set 
 
 I don't personally have any strong preference for what TUT zero should be. It should be set as whichever single moment in history is collectively decided to be the most important.
 
++++ Appendix: Special Relativity
+
+As it is, there's a bit of a problem with TUT. It purports to be a universal timekeeping system, but that's fundamentally impossible. Because of locality and special relativity, [there is no universal "now"](https://en.wikipedia.org/wiki/Relativity_of_simultaneity). Since it's impossible to have a universal "now", we also can't have a universal timekeeping system, which means that TUT isn't universal.
+
+However, using the magic "relative to the privileged reference frame of cosmic microwave background" incantation, we can get pretty close. Because CMB is (probably) the same across the whole universe, a timekeeping system that uses it as the rest frame is as close to "universal" as it's possible to get.
+
+Anchoring TUT on the CMB is still an arbitrary choice, but it's the best option available. The next best alternative would be to anchor it on Earth, which would be even more arbitrary and much harder to measure from anywhere in the universe.
+
+The consequence to this is that, because Earth isn't stationary relative to the CMB, we have to factor in time dilation. Earth has a CMB-relative peculiar velocity of [approximately](https://en.wikipedia.org/wiki/Cosmic_microwave_background#:~:text=369.82%20%C2%B1%200.11%20km/s) `369,820 m/s`, which is about 0.12% of the speed of light. At such a small fraction of the speed of light, relativistic effects aren't really noticeable at a human scale. However, they do exist, and for high-precision applications, they cannot be ignored.
+
+Here's the formula to calculate how long Earth-relative tims are in terms of CMB-relative tims. To keep things simple, I'm only considering the relativistic time dilation from Earth's CMB-relative peculiar velocity and the gravitational time dilation from Earth's gravity. Those are the two most significant sources of time dilation on Earth (and by a lot), but a slightly more accurate formula would also consider the gravity of other nearby objects like the Sun and the Moon.
+
+$$\frac{1}{\sqrt{1 - \frac{(369,820 \text{ m/s})^2}{c^2}} \times (1 - \frac{G \times M_{\oplus}}{R_{\oplus} \times c^2})}$$
+
+It's [approximately](https://www.wolframalpha.com/input?i=N%5B1+%2F+%28sqrt%281+-+%28370+km%2Fs%29%5E2+%2F+c%5E2%29+*+%281+-+%28G+*+Earth+mass%29+%2F+%28Earth+radius+*+c%5E2%29%29%29%2C10%5D) `1.000000762`. This means that 1 Earth tim (exactly `10^44` Earth-relative Planck times) is longer than 1 CMB tim by about 762 billionths of a CMB tim. It's not a big difference, but it compounds over time.
+
+This sounds eerily similar to the caesium seconds vs solar seconds conflation that is the whole justification for the Marks system. My proposed solution is to just not use local (Earth-relative) tims. The downside is that 1 tim won't equal exactly `10^44` local Planck times, but the upside is that it allows every object in the universe to agree on how long 1 tim is and what TUT value the current moment in time is.
+
+This would be useful to GPS and internet satellites in the modern day, and in a sci-fi future scenario, one could imagine that it'd also be useful for extraplanetary colonies.
+
+It's worth noting that UTC has these same problems, it just doesn't deal with them. At all. Astronomers have to use systems like [TCB](https://en.wikipedia.org/wiki/Barycentric_Coordinate_Time) (which factors out gravitational time dilation but not relativistic time dilation) to compensate.
+
++++
+
 ## Sundial Time
 
 ![A metal sundial on a stone pedestal. On the outer circumference lie Roman numerals counting up to 24. On the inner circumference are ornate symbols. In the center is a sleek angled gnomon. The gnomon's shadow lies approximately halfway between the I and II.](/media/sundial.webp)
@@ -497,6 +523,20 @@ I don't have a firm specification for Sundial time. As long as it's Earth-tracki
 Firstly, I suggest using **dal** as the unit of Sundial time, pronounced `/dɑːl/`, like "doll" or like "dial" (from "sun**dial**") with a strong Southern twang.
 
 Secondly, I suggest that 1 dal should be equal to `1/90,720` of a day. This is [approximately](https://www.wolframalpha.com/input?i=%28mean+solar+day+%2F+90%2C720%29+%2F+%2810%5E44+planck+times+%2F+10%29) 1.7665 decitims (0.95 caesium seconds). I selected 90,720 because it's extremely divisible; it has [120 divisors](https://www.wolframalpha.com/input?i=divisors+of+90%2C720) (compared to 86,400's mere [96 divisors](https://www.wolframalpha.com/input?i=divisors+of+86%2C400)). It's also divisible by 7, which 86,400 is not.
+
+## Marks System Converter Tool
+
+Obviously, no existing tool supports the Marks system. If you ask Wolfram Alpha to "convert 10 len to meters", it'll helpfully interpret "10 len" as "the closing price of the Lennar Corporation (NYSE:LEN) from the beginning to end of 2010", which it obviously can't convert to meters, so it'll throw an "incompatible units" error. I'm not joking; [try it yourself](https://www.wolframalpha.com/input?i=convert+10+len+to+meters).
+
+So if you want to convert anything to or from the Marks system, you have to either manually calculate it using the conversion ratios I've given, or you have to substitute "len" for "`10^44` Planck lengths" into the query box.
+
+Both of those are inconvenient, so for your convenience, I made a little web app that natively understands the Marks system: msct (Marks System Converter Tool). You can try it live here: <https://msct.vercel.app/>.
+
+[![A screenshot of msct with the input '42 lens' and six conversions, including '4.2 decalens (42 lens)', '6.79 meters', and '7.42 yards'](/media/msct_screenshot.webp)](https://msct.vercel.app/)
+
+It can't do any actual calculations like Wolfram Alpha can (mainly because I built this in a couple days and didn't have hundreds of millions of dollars nor 400 employees like Wolfram Research did), but it understands most number formats (including scientific notation), all of the SI and Marks prefixes, and the units of the metric, customary, and Marks systems.
+
+If you're interested in the technical details, you can read the [README](https://github.com/ethmarks/msct?tab=readme-ov-file).
 
 ## You can stop suspending your disbelief now
 
@@ -549,5 +589,25 @@ In mid-2024, when I was 13, I was idly playing with [Wolfram Alpha](https://www.
 If the Marks system or something similar is ever genuinely adopted in any capacity, I will be extremely surprised. I personally will continue using meters and seconds. The utility of using units that other people can understand far outweighs the utility of being able to express the speed of light as `10^10`.
 
 However, I do think that the Marks system is genuinely better in many respects to both the metric system and the customary system. Even if it will never be practically used, it's a fun intellectual curiosity that's interesting to think about and to write about. Thanks for indulging me, dear reader.
+
++++ Appendix: Planck Unit Uncertainty
+
+I've tried to make it clear that I'm not genuinely advocating that we adopt the Marks system. The sheer amount of cultural inertia that seconds have is already an effectively insurmountable obstacle to practical adoption. However, I worry that some readers might still come away from this article believing that the Marks system could ever be anything more than a thought experiment. This appendix should remedy that.
+
+We don't know how large each of the Planck units are.
+
+We know the formulas for all of the Planck units and we can measure most of the constituent constants very precisely, but there's one constant that is very tricky to measure: the gravitational constant. Gravity is the weakest of the four fundamental forces, so to measure it you either need impractically large experiments or extremely precise measuring equipment. It's also impossible to shield against gravity; if a truck happens to drive past your lab during an experiment or someone walks past the door, the gravitational noise is often enough to ruin your measurements.
+
+Through very clever experiments, we've managed to measure the gravitational constant very precisely, but these different experiments conflict with each other and have non-overlapping error bars. We are only certain of the value of the gravitational constant up to 6 significant figures.
+
+Because our value for the gravitational constant is limited to 6 significant figures, everything that we derive from the gravitational constant, notably including all of the Planck units, is also limited to 6 significant figures. Because the Marks system spans 54 orders of magnitude, those 6 sigfigs aren't nearly enough.
+
+The only way to fix this is to have a high-precision value for the gravitational constant, but that doesn't seem to be on the near horizon. I personally suspect (though I am not even slightly an expert in this field so please don't take anything I say seriously) that we'll need a viable theory of quantum gravity before we can determine the gravitational constant to a sufficiently-precise value, and we're not anywhere close to solving quantum gravity.
+
+Until then, the Marks system does not work. Even on paper, even if you could magically make everyone use the Marks system, we literally do not have the technology to determine the base units to sufficient precision.
+
+To illustrate why this would be such a problem, if we tried to express the diameter of Earth in len using our current value of the gravitational constant, the error bar is approximately 140 meters. In contrast, when we express the diameter of Earth in meters, the error bar is approximately `0.000000012742` meters. The latter is nearly two orders of magnitude smaller than the smallest wavelength of visible light, while the former is approximately the height of the Great Pyramid of Giza. That level of imprecision would be absolutely unacceptable.
+
++++
 
 ~Ethan
