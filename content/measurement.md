@@ -380,6 +380,20 @@ To prevent this post from being 10,000 words long, I'm going to put a bunch of d
 | Pul  | Force            | `maz * len / tim^2`   | `/pʊl/`       | `0.012 N`      |
 | Ner  | E**ner**gy       | `maz * len^2 / tim^2` | `/nɛr/`       | `0.002 J`      |
 
++++ Appendix: Temperature
+
+The Marks system doesn't have a unit for temperature. This is for several reasons.
+
+Firstly, none of the big three existing temperature systems (Celsius, Fahrenheit, and Kelvin) are defined in terms of seconds. The point of the Marks system is to provide Planck-based alternatives for the systems that depend on seconds. Temperature systems don't depend on seconds, so they don't need alternatives.
+
+Secondly, temperature isn't technically a true dimensionality. Temperature is just an expression of energy (via the Boltzmann constant), which there's already a Marks unit for: ner. If you really insist on using Marks units for temperature, you can. For example, 100°C is [approximately](https://www.wolframalpha.com/input?i=%28Boltzmann+constant+*+100+degrees+Celsius+in+joules%29+%2F+%2810%5E8+Planck+masses+*+%2810%5E34+Planck+lengths%29%5E2+%2F+%2810%5E44+Planck+times%29%5E2%29) 2.634 attoner. If I created a new temperature unit, I would be repackaging an existing dimensionality in an arbitrary new unit with an arbitrary scale and an arbitrary name, which goes against the goals of the Marks system.
+
+Thirdly, in order to make a convenient temperature system (i.e. one that isn't zeroed at absolute zero, which would be inconvenient for human-scale temperatures), I would have to choose an arbitrary offset point to set as 0°. Even if I tried to be scientific and base it off of the properties of something (like how Celsius sets 0° as the freezing point of pure water), the substance and phase boundary that I would choose would still be arbitrary.
+
+I think it's better to just use the existing temperature systems rather than inventing a Marks system temperature system just for the sake of having one.
+
++++
+
 ### Notes
 
 My suggested pronunciation for ler is `/lɚ/`. This is the natural pronunciation for most American English speakers (including me) that aligns with how we pronounce "acce**ler**ation", but it contains a [rhotic schwa](https://en.wikipedia.org/wiki/R-colored_vowel), which can be difficult to pronounce if you speak almost any language/dialect other than American English or Mandarin Chinese. If you're part of the 80% of humanity that doesn't use rhotic schwas, I suggest pronouncing ler as `/lɛr/` (rhymes with air).
@@ -403,20 +417,6 @@ In cases like these, a convenient supermultiple should be used in common vernacu
 Of course, it would be great if the base units were human-scale, but they don't naturally work out that way and it's not worth losing the ease of 1:1 unit coherence by using arbitrary conversion ratios.
 
 Note that many vernacular multiples have either the same number of syllables or fewer compared to their metric or customary counterparts, so they aren't harder to say. For example, "hectovel" is three syllables, which is the same as "miles per hour" and shorter than both "meters per second" and "kilometers per hour". Likewise, "kilovol" is three syllables, which is the same as "cubic feet" and shorter than "cubic meters".
-
-+++ Appendix: Temperature
-
-The Marks system doesn't have a unit for temperature. This is for several reasons.
-
-Firstly, none of the big three existing temperature systems (Celsius, Fahrenheit, and Kelvin) are defined in terms of seconds. The point of the Marks system is to provide Planck-based alternatives for the systems that depend on seconds. Temperature systems don't depend on seconds, so they don't need alternatives.
-
-Secondly, temperature isn't technically a true dimensionality. Temperature is just an expression of energy (via the Boltzmann constant), which there's already a Marks unit for: ner. If you really insist on using Marks units for temperature, you can. For example, 100°C is [approximately](https://www.wolframalpha.com/input?i=%28Boltzmann+constant+*+100+degrees+Celsius+in+joules%29+%2F+%2810%5E8+Planck+masses+*+%2810%5E34+Planck+lengths%29%5E2+%2F+%2810%5E44+Planck+times%29%5E2%29) 2.6 attoner. If I created a new temperature unit, I would be repackaging an existing dimensionality in an arbitrary new unit with an arbitrary scale and an arbitrary name, which goes against the goals of the Marks system.
-
-Thirdly, in order to make a convenient temperature system (i.e. one that isn't zeroed at absolute zero), I would have to choose an arbitrary offset point to set as 0°. Even if I tried to be scientific and base it off of the properties of something (like how Celsius sets 0° as the freezing point of pure water), the substance and phase boundary that I would choose would still be arbitrary.
-
-I think it's better to just use the existing temperature systems rather than inventing a Marks system temperature system just for the sake of having one.
-
-+++
 
 ## Tim Universal Time
 
@@ -464,7 +464,7 @@ I don't personally have any strong preference for what TUT zero should be. It sh
 
 As it is, there's a bit of a problem with TUT. It purports to be a universal timekeeping system, but that's fundamentally impossible. Because of locality and special relativity, there is no universal "now". Since it's impossible to have a universal "now", we also can't have a universal timekeeping system, which means that TUT isn't universal.
 
-However, by casting the magic "relative to the privileged reference frame of cosmic microwave background" spell, we can get pretty close. Because CMB is (probably) the same across the whole universe, a timekeeping system that uses it as the anchor point is as close to "universal" as it's possible to get.
+However, by saying the magic "relative to the privileged reference frame of cosmic microwave background" incantation, we can get pretty close. Because CMB is (probably) the same across the whole universe, a timekeeping system that uses it as the rest frame is as close to "universal" as it's possible to get.
 
 Anchoring TUT on the CMB is still an arbitrary choice, but it's the best option available. The next best alternative would be to anchor it on Earth, which would be even more arbitrary.
 
@@ -472,15 +472,15 @@ The consequence to this is that, because Earth is _not_ stationary relative to t
 
 Here's the formula to calculate how long Earth-relative tims are in terms of CMB-relative tims. To keep things simple, I'm only considering the relativistic time dilation from Earth's CMB-relative peculiar velocity and the gravitational time dilation from Earth's gravity. Those are the two most significant sources of time dilation on Earth (and by a lot), but a slightly more accurate formula would also consider the gravity of other nearby objects like the Sun and the Moon.
 
-$$\frac{10^{44} \times t_P}{\sqrt{1 - \frac{(369,820 \text{ m/s})^2}{c^2}} \times (1 - \frac{G \times M_{\oplus}}{R_{\oplus} \times c^2})}$$
+$$\frac{1}{\sqrt{1 - \frac{(369,820 \text{ m/s})^2}{c^2}} \times (1 - \frac{G \times M_{\oplus}}{R_{\oplus} \times c^2})}$$
 
-It's [approximately](https://www.wolframalpha.com/input?i=N%5B%2810%5E44+*+planck+time%29+%2F+%28sqrt%281+-+%28370+km%2Fs%29%5E2+%2F+c%5E2%29+*+%281+-+%28G+*+Earth+mass%29+%2F+%28Earth+radius+*+c%5E2%29%29%29+in+planck+times%2C10%5D) `1.000000762` tims. It's not a big difference, but it compounds over time.
+It's [approximately](https://www.wolframalpha.com/input?i=N%5B1+%2F+%28sqrt%281+-+%28370+km%2Fs%29%5E2+%2F+c%5E2%29+*+%281+-+%28G+*+Earth+mass%29+%2F+%28Earth+radius+*+c%5E2%29%29%29%2C10%5D) `1.000000762`. This means that 1 Earth tim (exactly `10^44` measured Planck times) is longer than 1 CMB tims by about 762 billionths of a CMB tim. It's not a big difference, but it compounds over time.
 
 My proposed solution to this is to just not use local (Earth-relative) tims. The downside is that 1 tim won't equal exactly `10^44` local Planck times, but the upside is that it allows every object in the universe to agree on how long 1 tim is and what TUT value the current moment in time is.
 
 This would be useful to GPS and internet satellites in the modern day, and in a sci-fi future scenario, one could imagine that it'd also be useful for extraplanetary colonies.
 
-It's also worth noting that UTC doesn't deal with this. At all. Astronomers have to use systems like [TCB](https://en.wikipedia.org/wiki/Barycentric_Coordinate_Time) (which factors out gravitational time dilation but not relativistic time dilation) to compensate for the fact that almost all of their telescopes are either on Earth or near Earth's gravity well.
+It's worth noting that UTC has these same problems, it just doesn't deal with them. At all. Astronomers have to use systems like [TCB](https://en.wikipedia.org/wiki/Barycentric_Coordinate_Time) (which factors out gravitational time dilation but not relativistic time dilation) to compensate.
 
 +++
 
@@ -592,7 +592,7 @@ The only way to fix this is to have a high-precision value for the gravitational
 
 Until then, the Marks system does not work. Even on paper, even if you could magically make everyone use the Marks system, we literally do not have the technology to determine the base units to sufficient precision.
 
-For example, if we tried to express the diameter of Earth in len using our current value of the gravitational constant, the error bar is approximately 140 meters. By contrast, when we express the diameter of Earth in meters, the error bar is approximately `0.000000012742` meters. The latter is nearly two orders of magnitude smaller than the wavelength of visible light, while the former is approximately the height of the Great Pyramid of Giza.
+To illustrate why this would be such a problem, if we tried to express the diameter of Earth in len using our current value of the gravitational constant, the error bar is approximately 140 meters. In contrast, when we express the diameter of Earth in meters, the error bar is approximately `0.000000012742` meters. The latter is nearly two orders of magnitude smaller than the smallest wavelength of visible light, while the former is approximately the height of the Great Pyramid of Giza. That level of imprecision would be absolutely unacceptable.
 
 +++
 
